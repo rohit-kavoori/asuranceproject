@@ -1,5 +1,7 @@
 package com.ekthasol.asurance.controllers.login;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -17,12 +19,13 @@ public class LoginController {
 	LoginService loginService;
 	
 	@RequestMapping(value = "/getCustomer",method = RequestMethod.POST)
-		public ModelAndView getCustomer(@ModelAttribute("customer") Customer customer) {
+		public ModelAndView getCustomer(@ModelAttribute("customer") Customer customer, HttpSession session) {
 		
 			Customer cust = loginService.getCustomer(customer.getEmail(), customer.getPassword());
 			
 			if(cust != null)
-				return new ModelAndView("success","customer",cust);
+				session.setAttribute("customer", cust);
+				return new ModelAndView("success");
 			else
 				return new ModelAndView("failure");
 	}

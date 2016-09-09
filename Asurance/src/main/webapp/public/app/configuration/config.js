@@ -2,7 +2,7 @@
     angular.module("routeProvider", ['ui.router'])
         .config( function ($urlRouterProvider, $stateProvider) {
             //configuring the routes
-            $urlRouterProvider.otherwise('/start');
+            $urlRouterProvider.otherwise('/register');
 
        /*     var vehiclesObj = {
                 templateUrl: "app/templates/login.html"
@@ -31,9 +31,17 @@
     }])*/
     $stateProvider
 
-    .state('start', {
-        url: '/start',
-        templateUrl: 'app/templates/start.html'
+    .state('login', {
+        url: '/login',
+        templateUrl: 'public/app/templates/login.jsp'
+    })
+    .state('register', {
+        url: '/register',
+        templateUrl: 'public/app/templates/register.jsp'
+    })
+    .state('quote', {
+        url: '/quote',
+        templateUrl: 'public/app/templates/start.jsp'
     });
 
 

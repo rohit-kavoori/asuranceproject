@@ -5,9 +5,13 @@
       <li id="headerTitle">Assurance Insurance</li>
     </ul>
      <ul class="nav navbar-nav navbar-right">
-      <li data-toggle="modal" data-target="#registerModal"><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <!-- <li data-toggle="modal" data-target="#registerModal" ui-sref="login"><a href="#/login"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
       <li data-toggle="modal" data-target="#loginModal"><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      <li ><a href="#"><span class="glyphicon glyphicon-edit"></span> Get Quote</a></li>
+      <li ><a href="#"><span class="glyphicon glyphicon-edit"></span> Get Quote</a></li> -->
+      
+      <li   ui-sref="register"><a href="#/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li  ui-sref="login"><a href="#/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <li ui-sref="quote"><a href="#/quote"><span class="glyphicon glyphicon-edit"></span> Get Quote</a></li>
     </ul>
   </div>
 </nav>
