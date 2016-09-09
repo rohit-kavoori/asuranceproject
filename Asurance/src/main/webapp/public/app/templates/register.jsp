@@ -3,8 +3,7 @@
 		<div
 			class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
 			<form role="form" name="registerPage" ng-controller="startPageCtrl"
-				ng-click="register(model)" novalidate action="saveCustomer"
-				method="post">
+				ng-click="register(model)" novalidate >
 				<h2 class="btn btn-danger btn-block" style="font-size: 25px">
 					<b>REGISTER HERE</b><small></small>
 				</h2>

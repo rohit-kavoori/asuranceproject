@@ -1,16 +1,8 @@
 angular.module("components")
 .controller('startPageCtrl', function($scope, $http) {
-$scope.showDriver = false;
-$scope.showStart = true;
-$scope.showVehicle = false;
-$scope.showFinalDetails = false;
-$scope.showRate = false;
 $scope.save = function(model) {
 $scope.startPage.submitted = true;
 if($scope.startPage.$valid) {
-
-	$scope.showStart = false;
-	$scope.showDriver = true;
 console.log(model);
 
 }
@@ -27,8 +19,17 @@ $scope.register = function(model){
 	$scope.registerPage.isPasswordMatch = false;
 	if($scope.registerPage.$valid && model.password == model.passwordConfirmation){
 		$scope.registerPage.isPasswordMatch = true;
-		
 		console.log(model);
+		$http({
+			method: "POST",
+			url: "saveCustomer",
+			data: model,
+			headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+		}).success(function(data){
+			console.log("success");
+		}).error(function(){
+			console.log("error");
+		});
 	}
 	
 	else {
