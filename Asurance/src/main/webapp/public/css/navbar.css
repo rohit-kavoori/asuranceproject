@@ -53,10 +53,12 @@ input[type=text], input[type=password], input[type=date], select {
 }
 .navbar-bottom {
 	min-height: 50px;
+	margin-top: 90px;
 }
-.modal {
-	overflow: auto;
+#registerForm, #loginForm {
+	margin-top: 58px;
 }
+
 
 /*#state.ng-invalid.ng-touched , input.ng-invalid.ng-touched {
     border-color:red;

@@ -15,20 +15,20 @@
     <script src="public/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script> 
 </head>
 
-<body ng-app="routeProvider">
+<body >
     <div class="container-fluid" ng-controller="mainCtrl">
         <div custom-header></div>
        
-        <div id="main" ng-include="templates.tabsUrl"></div>
-         <div ui-view></div>
-        <div ng-include="templates.footerUrl"></div>
+      <!--   <div id="main" ng-include="templates.tabsUrl"></div> -->
+         <div ui-view ></div>
+      <!--   <div ng-include="templates.footerUrl"></div> -->
     </div>
 
    <!--   <script src= "app/js/index.js"></script> -->
 
    <script src="public/app/modules/modules.js"></script>
    <script src="public/app/app.js"></script>
-    <script src= "app/configuration/config.js"></script>
+    <script src= "public/app/configuration/config.js"></script>
     <script src= "public/app/components/customHeader.js"></script>
     <script src= "public/app/components/startPage.js"></script>
     <script src= "public/app/components/driverPage.js"></script>

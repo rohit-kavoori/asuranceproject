@@ -1,7 +1,7 @@
 
-<div style="color:#f90606;background-color:#f2f2f2; margin-top:100px; height:500px;"class="container" >
+<div class="container" >
 	
-	<div class="row" style="margin-top:20px">
+	<div class="row" id="loginForm">
 		<div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3" >
 			<form role="form" action="getCustomer" method="post">
 				<fieldset>
@@ -24,7 +24,7 @@
 							<input type="submit" class="btn btn-lg btn-success btn-block" value="Submit">
 						</div>
 						<div class="col-xs-6 col-sm-6 col-md-6">
-							<a  href="#" class="btn btn-lg btn-primary btn-block" data-dismiss="modal" data-toggle="modal" data-target="#registerModal">Register</a>
+							<a  href="#" class="btn btn-lg btn-primary btn-block" ui-sref="register">Register</a>
 						</div>
 					</div>
 				</fieldset>

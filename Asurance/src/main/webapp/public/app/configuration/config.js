@@ -1,48 +1,41 @@
-
-    angular.module("routeProvider", ['ui.router'])
-        .config( function ($urlRouterProvider, $stateProvider) {
+(function () {
+    angular.module("autoInsurance")
+        .config(["$urlRouterProvider", "$stateProvider", function ($urlRouterProvider, $stateProvider) {
             //configuring the routes
-            $urlRouterProvider.otherwise('/register');
-
-       /*     var vehiclesObj = {
-                templateUrl: "app/templates/login.html"
+            var loginObj = {
+                templateUrl: "public/app/templates/login.jsp"
             };
-            var driversObj = {
-                templateUrl: "app/templates/register.html"
+            var registerObj = {
+                templateUrl: "public/app/templates/register.jsp"
             };
-            var startObj = {
-                url: '/start',
-                templateUrl: "app/templates/start.html"
+            var productsObj = {
+                templateUrl: "public/app/templates/tabs.jsp"
             };
-             var detailsObj = {
-                templateUrl: "app/templates/start.html"
-            };
-             var rateObj = {
-                templateUrl: "app/templates/start.html"
-            };
-
-            $stateProvider.state("vehicles", vehiclesObj);
-            $stateProvider.state("drivers", driversObj);
-            $stateProvider.state("final-details", detailsObj);
-            $stateProvider.state("rate", rateObj);
-            $stateProvider.state("start", startObj);
+            $stateProvider.state("login", loginObj);
+            $stateProvider.state("register", registerObj);
+            $stateProvider.state("quote", productsObj);
     }]).run(["$state", function ($state) {
-            $state.go("start");
-    }])*/
-    $stateProvider
+            $state.go("register");
+    }])
+})();
+
+
+
+/*    $stateProvider
 
     .state('login', {
-        url: '/login',
+        url: '#/login',
         templateUrl: 'public/app/templates/login.jsp'
     })
     .state('register', {
-        url: '/register',
+        url: '#/register',
         templateUrl: 'public/app/templates/register.jsp'
     })
     .state('quote', {
-        url: '/quote',
-        templateUrl: 'public/app/templates/start.jsp'
+        url: '#/quote',
+        templateUrl: 'public/app/templates/tabs.jsp'
     });
 
 
 });
+  angular.bootstrap(document.getElementById("header"), ['routeProvider']);*/

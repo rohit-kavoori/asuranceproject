@@ -16,8 +16,8 @@
 </div> -->
 
 
-<!-- <div id="start" start-page>
-</div> -->
+<div id="start" start-page>
+</div>
 
 </div>
 <!-- <div id="vehicles">
