@@ -15,21 +15,16 @@ public class Address {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID", unique = true, nullable = false)
-	private int id;
+	private int addressId;
 
-	/**
-	 * @return the id
-	 */
-	public int getId() {
-		return id;
+	
+
+	public int getAddressId() {
+		return addressId;
 	}
 
-	/**
-	 * @param id
-	 *            the id to set
-	 */
-	public void setId(int id) {
-		this.id = id;
+	public void setAddressId(int addressId) {
+		this.addressId = addressId;
 	}
 
 	@Column(name = "ADDRESS_LINE1")
@@ -41,7 +36,7 @@ public class Address {
 	@Column(name = "STATE")
 	private String state;
 	@Column(name = "ZIPCODE")
-	private String zipcode;
+	private String zip;
 
 	public String getAddressLine1() {
 		return addressLine1;
@@ -75,12 +70,14 @@ public class Address {
 		this.state = state;
 	}
 
-	public String getZipcode() {
-		return zipcode;
+	public String getZip() {
+		return zip;
 	}
 
-	public void setZipcode(String zipcode) {
-		this.zipcode = zipcode;
+	public void setZip(String zip) {
+		this.zip = zip;
 	}
+
+	
 
 }

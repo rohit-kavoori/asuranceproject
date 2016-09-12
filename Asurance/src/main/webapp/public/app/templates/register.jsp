@@ -77,7 +77,7 @@
 				</div>
 
 				<div class="form-group">
-					<input type="text" name="zipcode" ng-model="model.zip" id="zip"
+					<input type="text" name="zip" ng-model="model.zip" id="zip"
 						class="form-control input-lg" placeholder="Zip" tabindex="3"
 						 required> <span class="text-error"
 						ng-show="registerPage.submitted && registerPage.city.$invalid"

@@ -24,12 +24,12 @@
       <div class="form-group row">
         <div class="col-sm-4 "><input type="text" class="form-control"  ng-model="model.address2" name="city" placeholder="City" required /><span class="text-error" ng-show="startPage.submitted && startPage.address2.$invalid" ng-style="errorField">*</span></div>
         <div class="col-sm-2 " ng-controller="stateController">
-          <select class="form-control"   ng-model="model.address3" name="address3" id="state" style="border-radius: 4px;border: solid 3px #cbc9c9;background-color: #fcf8e3"  ng-model = "selectedState" ng-options = "state.name for state in addState"  ng-init="selectedState = options[0].name" required >
+          <select class="form-control"   ng-model="model.address3" name="state" id="state" style="border-radius: 4px;border: solid 3px #cbc9c9;background-color: #fcf8e3"  ng-model = "selectedState" ng-options = "state.name for state in addState"  ng-init="selectedState = options[0].name" required >
             
             <option value="">Select State</option>
             </select><span class="text-error" ng-show="startPage.submitted && startPage.address3.$invalid" ng-style="errorField">*</span>
           </div>
-          <div class="col-sm-2 "><input type="text" class="form-control"  ng-model="model.address4" name="zipcode" placeholder="Zip" style="width:180px" required /><span class="text-error" ng-show="startPage.submitted && startPage.address4.$invalid" ng-style="errorField">*</span></div>
+          <div class="col-sm-2 "><input type="text" class="form-control"  ng-model="model.address4" name="zip" placeholder="Zip" style="width:180px" required /><span class="text-error" ng-show="startPage.submitted && startPage.address4.$invalid" ng-style="errorField">*</span></div>
         </div>
         <div class="form-group row">
          <!--  <div class="col-sm-2 "> <label for="dob" style="margin-top:10px">Date of Birth</label></div> -->

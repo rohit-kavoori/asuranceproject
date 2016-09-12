@@ -24,7 +24,7 @@ public class QuoteGenerationController {
 	@RequestMapping(value = "/getVehicles", method = RequestMethod.POST)
 	public ModelAndView getVehicles(@ModelAttribute("address") Address address) {
 		
-
+		
 		String output = quoteGenerationService.getListtoUI(address);
 		
 		ObjectMapper mapper = new ObjectMapper();
