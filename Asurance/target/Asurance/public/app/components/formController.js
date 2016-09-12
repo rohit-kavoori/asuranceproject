@@ -1,9 +1,10 @@
 angular.module("components").controller(
 		'startPageCtrl',
-		function($scope, $http) {
-			$scope.save = function(model) {
+		function($scope, $http, $state) {
+			$scope.start = function(model) {
 				$scope.startPage.submitted = true;
 				if ($scope.startPage.$valid) {
+					$state.go("vehicles");
 					console.log(model);
 
 				} else {
@@ -17,6 +18,9 @@ angular.module("components").controller(
 
 					}
 				}
+			};
+			$scope.noThanks = function(){
+				$state.go("register");
 			};
 
 			$scope.register = function(model) {
@@ -40,7 +44,7 @@ angular.module("components").controller(
 						"password": model.password
 					};
 					
-					/*var submit = $http({
+				/*	var submit = $http({
 						method: "post",
 						url: "saveCustomer",
 						data: model,

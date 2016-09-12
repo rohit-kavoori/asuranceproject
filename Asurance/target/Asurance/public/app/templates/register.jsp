@@ -7,7 +7,7 @@
 				</h2>
 				<hr class="colorgraph">
 			<form role="form" name="registerPage" ng-controller="startPageCtrl"
-				  action="saveCustomer" method="post" >
+				   action="saveCustomer" method="post" >
 				 <span
 								class="text-error"
 								ng-show="registerPage.submitted && registerPage.$invalid"
@@ -77,7 +77,7 @@
 				</div>
 
 				<div class="form-group">
-					<input type="text" name="zipcode" ng-model="model.zip" id="zip"
+					<input type="text" name="zip" ng-model="model.zip" id="zip"
 						class="form-control input-lg" placeholder="Zip" tabindex="3"
 						 required> <span class="text-error"
 						ng-show="registerPage.submitted && registerPage.city.$invalid"
@@ -87,8 +87,9 @@
 				<div class="form-group" ng-controller="stateController">
 					<select class="form-control input-lg" name="state"
 						ng-model="model.state" id="stateID"
-						ng-options="state.name for state in addState"  required>
+						  required>
 						<option value="">Select State</option>
+						<option ng-repeat="state in addState" value="{{state.name}}">{{state.name}}</option>
 					</select> <span class="text-error"
 						ng-show="registerPage.submitted && registerPage.state.$invalid"
 						ng-style="errorField">*</span>
@@ -137,7 +138,7 @@
 				<div class="row">
 					<div class="col-xs-12 col-md-6">
 						<input  type="submit" value="Register"
-							 class="btn btn-primary btn-block btn-lg"  tabindex="7" >
+							 class="btn btn-primary btn-block btn-lg" ng-click="register(model)" tabindex="7" >
 					</div>
 					<div class="col-xs-12 col-md-6">
 						<a ui-sref="login" href="#"
