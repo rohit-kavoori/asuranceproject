@@ -23,11 +23,13 @@ public class LoginController {
 		
 			Customer cust = loginService.getCustomer(customer.getEmail(), customer.getPassword());
 			
-			if(cust != null)
+			if(cust != null) {
 				session.setAttribute("customer", cust);
 				return new ModelAndView("success");
-			else
+			}
+			else{
 				return new ModelAndView("failure");
+			}
 	}
 
 }

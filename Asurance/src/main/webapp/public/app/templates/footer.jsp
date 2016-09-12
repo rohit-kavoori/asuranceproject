@@ -1,3 +1,3 @@
-<nav class="navbar navbar-defualt navbar-bottom">
+<nav class="navbar navbar-default navbar-bottom" >
 
 </nav>

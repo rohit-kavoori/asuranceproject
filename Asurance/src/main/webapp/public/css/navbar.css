@@ -51,14 +51,13 @@ input[type=text], input[type=password], input[type=date], select {
 .glyphicon-user, .glyphicon-home {
 	margin-right: 12px;
 }
-.navbar-bottom {
-	min-height: 50px;
-	margin-top: 90px;
-}
+
 #registerForm, #loginForm {
 	margin-top: 58px;
 }
-
+#registerForm form {
+	margin-bottom: 80px;
+}
 
 /*#state.ng-invalid.ng-touched , input.ng-invalid.ng-touched {
     border-color:red;

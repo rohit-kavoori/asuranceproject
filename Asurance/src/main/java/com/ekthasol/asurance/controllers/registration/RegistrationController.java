@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-
 import com.ekthasol.asurance.models.Address;
 import com.ekthasol.asurance.models.Customer;
 import com.ekthasol.asurance.service.registration.RegistrationService;
@@ -19,12 +18,16 @@ public class RegistrationController {
 
 	@RequestMapping(value="/saveCustomer", method=RequestMethod.POST)
 	public ModelAndView saveCustomer(@ModelAttribute Customer customer, @ModelAttribute Address address) {
+		System.out.println(customer);
 
 		boolean status = registrationService.saveCustomer(customer, address);
 
-		if (status)
+		if (status){
 			return new ModelAndView("success","customer",customer);
-		else
+		}
+		else{
 			return new ModelAndView("failure");
+		}
+	
 	}
 }

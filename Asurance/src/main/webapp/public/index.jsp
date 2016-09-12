@@ -21,9 +21,9 @@
        
       <!--   <div id="main" ng-include="templates.tabsUrl"></div> -->
          <div ui-view ></div>
-      <!--   <div ng-include="templates.footerUrl"></div> -->
+        
     </div>
-
+ <!-- <div ng-include="templates.footerUrl" id="footer"></div> -->
    <!--   <script src= "app/js/index.js"></script> -->
 
    <script src="public/app/modules/modules.js"></script>
