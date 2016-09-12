@@ -40,12 +40,12 @@ angular.module("components").controller(
 						"password": model.password
 					};
 					
-					var submit = $http({
+					/*var submit = $http({
 						method: "post",
 						url: "saveCustomer",
 						data: model,
 						headers: {'Content-Type': 'application/x-www-form-urlencoded'}
-					});
+					});*/
 					console.log(formData);
 					
 					//$http.post('saveCustomer', formData);

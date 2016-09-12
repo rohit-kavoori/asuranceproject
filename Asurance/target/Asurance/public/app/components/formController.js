@@ -23,9 +23,11 @@ angular.module("components").controller(
 		
 				$scope.registerPage.submitted = true;
 				$scope.registerPage.isPasswordMatch = false;
+			
 				if ($scope.registerPage.$valid
 						&& model.password == model.passwordConfirmation) {
 					$scope.registerPage.isPasswordMatch = true;
+					
 					var formData = {
 						"firstName": model.firstName,
 						"lastName": model.lastName,
@@ -38,7 +40,15 @@ angular.module("components").controller(
 						"password": model.password
 					};
 					
-					$http.post('saveCustomer', formData);
+					/*var submit = $http({
+						method: "post",
+						url: "saveCustomer",
+						data: model,
+						headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+					});*/
+					console.log(formData);
+					
+					//$http.post('saveCustomer', formData);
 					/*response.success(function(data, status, headers, config) {
 						$scope.responseData = data;
 					});

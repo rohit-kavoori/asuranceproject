@@ -39,7 +39,7 @@ public class Address {
 	@Column(name = "CITY")
 	private String city;
 	@Column(name = "STATE")
-	private String State;
+	private String state;
 	@Column(name = "ZIPCODE")
 	private String zipcode;
 
@@ -68,11 +68,11 @@ public class Address {
 	}
 
 	public String getState() {
-		return State;
+		return state;
 	}
 
 	public void setState(String state) {
-		State = state;
+		this.state = state;
 	}
 
 	public String getZipcode() {

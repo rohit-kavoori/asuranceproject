@@ -2,16 +2,23 @@ package com.ekthasol.asurance.models;
 
 public class Vehicle {
 
-	private int year;
+	private String year;
 	private String make;
 	private String model;
-	private String vinNumber;
+	private String vin;
 	
-	public int getYear() {
+	
+	public String getYear() {
 		return year;
 	}
-	public void setYear(int year) {
+	public void setYear(String year) {
 		this.year = year;
+	}
+	public String getVin() {
+		return vin;
+	}
+	public void setVin(String vin) {
+		this.vin = vin;
 	}
 	public String getMake() {
 		return make;
@@ -25,12 +32,5 @@ public class Vehicle {
 	public void setModel(String model) {
 		this.model = model;
 	}
-	public String getVinNumber() {
-		return vinNumber;
-	}
-	public void setVinNumber(String vinNumber) {
-		this.vinNumber = vinNumber;
-	}
-	
 	
 }

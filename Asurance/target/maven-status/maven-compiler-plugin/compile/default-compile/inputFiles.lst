@@ -1,11 +1,12 @@
-C:\BCJ-MAY16\Develop\assurance-git\asuranceproject\Asurance\src\main\java\com\ekthasol\asurance\models\Address.java
-C:\BCJ-MAY16\Develop\assurance-git\asuranceproject\Asurance\src\main\java\com\ekthasol\asurance\service\login\LoginService.java
-C:\BCJ-MAY16\Develop\assurance-git\asuranceproject\Asurance\src\main\java\com\ekthasol\asurance\service\quotegeneration\QuoteGenerationService.java
-C:\BCJ-MAY16\Develop\assurance-git\asuranceproject\Asurance\src\main\java\com\ekthasol\asurance\dao\registration\RegistrationDAO.java
-C:\BCJ-MAY16\Develop\assurance-git\asuranceproject\Asurance\src\main\java\com\ekthasol\asurance\service\registration\RegistrationService.java
-C:\BCJ-MAY16\Develop\assurance-git\asuranceproject\Asurance\src\main\java\com\ekthasol\asurance\controllers\login\LoginController.java
-C:\BCJ-MAY16\Develop\assurance-git\asuranceproject\Asurance\src\main\java\com\ekthasol\asurance\dao\login\LoginDAO.java
-C:\BCJ-MAY16\Develop\assurance-git\asuranceproject\Asurance\src\main\java\com\ekthasol\asurance\models\Vehicle.java
-C:\BCJ-MAY16\Develop\assurance-git\asuranceproject\Asurance\src\main\java\com\ekthasol\asurance\models\Customer.java
-C:\BCJ-MAY16\Develop\assurance-git\asuranceproject\Asurance\src\main\java\com\ekthasol\asurance\controllers\quotegeneration\QuoteGenerationController.java
-C:\BCJ-MAY16\Develop\assurance-git\asuranceproject\Asurance\src\main\java\com\ekthasol\asurance\controllers\registration\RegistrationController.java
+C:\Users\Bootcamp User 015\Desktop\New folder\asuranceproject\Asurance\src\main\java\com\ekthasol\asurance\models\Vehicle.java
+C:\Users\Bootcamp User 015\Desktop\New folder\asuranceproject\Asurance\src\main\java\com\ekthasol\asurance\service\quotegeneration\QuoteGenerationService.java
+C:\Users\Bootcamp User 015\Desktop\New folder\asuranceproject\Asurance\src\main\java\com\ekthasol\asurance\controllers\registration\RegistrationController.java
+C:\Users\Bootcamp User 015\Desktop\New folder\asuranceproject\Asurance\src\main\java\com\ekthasol\asurance\models\Address.java
+C:\Users\Bootcamp User 015\Desktop\New folder\asuranceproject\Asurance\src\main\java\com\ekthasol\asurance\models\Customer.java
+C:\Users\Bootcamp User 015\Desktop\New folder\asuranceproject\Asurance\src\main\java\com\ekthasol\asurance\controllers\quotegeneration\QuoteGenerationController.java
+C:\Users\Bootcamp User 015\Desktop\New folder\asuranceproject\Asurance\src\main\java\com\ekthasol\asurance\service\login\LoginService.java
+C:\Users\Bootcamp User 015\Desktop\New folder\asuranceproject\Asurance\src\main\java\com\ekthasol\asurance\dao\registration\RegistrationDAO.java
+C:\Users\Bootcamp User 015\Desktop\New folder\asuranceproject\Asurance\src\main\java\com\ekthasol\asurance\dao\login\LoginDAO.java
+C:\Users\Bootcamp User 015\Desktop\New folder\asuranceproject\Asurance\src\main\java\com\ekthasol\asurance\webservices\RestClient.java
+C:\Users\Bootcamp User 015\Desktop\New folder\asuranceproject\Asurance\src\main\java\com\ekthasol\asurance\controllers\login\LoginController.java
+C:\Users\Bootcamp User 015\Desktop\New folder\asuranceproject\Asurance\src\main\java\com\ekthasol\asurance\service\registration\RegistrationService.java

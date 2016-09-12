@@ -7,7 +7,7 @@
 				</h2>
 				<hr class="colorgraph">
 			<form role="form" name="registerPage" ng-controller="startPageCtrl"
-				 novalidate  ng-submit="register(model)" >
+				  action="saveCustomer" method="post" >
 				 <span
 								class="text-error"
 								ng-show="registerPage.submitted && registerPage.$invalid"
@@ -77,7 +77,7 @@
 				</div>
 
 				<div class="form-group">
-					<input type="text" name="zip" ng-model="model.zip" id="zip"
+					<input type="text" name="zipcode" ng-model="model.zip" id="zip"
 						class="form-control input-lg" placeholder="Zip" tabindex="3"
 						 required> <span class="text-error"
 						ng-show="registerPage.submitted && registerPage.city.$invalid"
@@ -137,7 +137,7 @@
 				<div class="row">
 					<div class="col-xs-12 col-md-6">
 						<input  type="submit" value="Register"
-							class="btn btn-primary btn-block btn-lg" tabindex="7" >
+							 class="btn btn-primary btn-block btn-lg"  tabindex="7" >
 					</div>
 					<div class="col-xs-12 col-md-6">
 						<a ui-sref="login" href="#"
