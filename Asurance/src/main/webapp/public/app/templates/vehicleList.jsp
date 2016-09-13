@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-${vehicleList.getModel() }
+${vehicleList.get(0).getModel() }
 </body>
 </html>

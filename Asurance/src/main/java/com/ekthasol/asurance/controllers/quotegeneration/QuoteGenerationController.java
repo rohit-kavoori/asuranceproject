@@ -29,7 +29,6 @@ public class QuoteGenerationController {
 		String output = quoteGenerationService.getListtoUI(address);
 		List<Vehicle> vehicleList=null;
 		ObjectMapper mapper = new ObjectMapper();
-		//Vehicle vehicle = new Vehicle();
 		try {
 			vehicleList = mapper.readValue(output, TypeFactory.defaultInstance().constructCollectionType(List.class, Vehicle.class));
 		} catch (Exception e) {
