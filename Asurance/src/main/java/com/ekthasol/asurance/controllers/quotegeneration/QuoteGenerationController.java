@@ -25,7 +25,7 @@ public class QuoteGenerationController {
 
 	@RequestMapping(value = "/getVehicles", method = RequestMethod.POST)
 	public ModelAndView getVehicles(@ModelAttribute("address") Address address, HttpSession session) {
-
+		ModelAndView model = new ModelAndView();
 		String output = quoteGenerationService.getListtoUI(address);
 		if (output != null) {
 			List<Vehicle> vehicleList = null;
@@ -38,12 +38,30 @@ public class QuoteGenerationController {
 			}
 			
 			if (vehicleList != null){
-				session.setAttribute("vehicles", vehicleList);
-				return new ModelAndView("vehicleList");
+				session.setAttribute("vehicleList", vehicleList);
+				model.setViewName("vehicleList");
 			}else
-				return new ModelAndView("failure");
+				model.setViewName("failure");
 		}
 		else
-			return new ModelAndView("failure");
+			model.setViewName("failure");
+		return model;
+	}
+	
+	@RequestMapping(value = "/questionnaire", method = RequestMethod.POST)
+	public ModelAndView getQuestions(@ModelAttribute("vehicles") Vehicle selectedVehicle){
+		
+		Vehicle vehicle = new Vehicle();
+		if(selectedVehicle.getIsSelected()){
+			
+			vehicle.setIsSelected(selectedVehicle.getIsSelected());
+			vehicle.setVin(selectedVehicle.getVin());
+			vehicle.setYear(selectedVehicle.getYear());
+			vehicle.setMake(selectedVehicle.getMake());
+			vehicle.setModel(selectedVehicle.getModel());
+		}
+		
+		System.out.println(vehicle.toString());
+		return new ModelAndView("questionaire");
 	}
 }
