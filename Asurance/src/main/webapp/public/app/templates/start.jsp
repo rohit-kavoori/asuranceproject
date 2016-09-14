@@ -1,6 +1,6 @@
 <div class="container" style="margin-top: 150px">
  
-  <form name="startPage" ng-controller="startPageCtrl" novalidate method="post" action="getVehicles">
+  <form name="startPage" ng-controller="startPageCtrl" method="post" action="getVehicles">
   	 <span
 								class="text-error"
 								ng-show="startPage.submitted && startPage.$invalid"

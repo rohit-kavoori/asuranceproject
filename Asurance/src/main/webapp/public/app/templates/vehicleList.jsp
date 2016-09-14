@@ -60,15 +60,11 @@ li { cursor: pointer; cursor: hand; }
 		<hr class="colorgraph">
 		<div class="row">
 			<div class="col-sm-6">
-				<ul class="pager">
-					<li><a href="#">Previous</a></li>
-				</ul>
+				<button class="btn btn-md btn-primary" onClick="history.back()">Back</button>
 			</div>
 			
 			<div class="col-sm-6">
-				<ul class="pager">
-					<li id="goToQuestionaire"><a>Save & Continue</a></li>
-				</ul>
+				<input type="submit" class="btn btn-md btn-primary" value="Save & Continue">
 			</div>
 		</div>
 	</div>
@@ -83,6 +79,7 @@ var count = 0;
         $("#btn1").hide();
         $("#btn2").show();
         $("#selected").show();
+        $("#noVehicle").hide();
         count++;
     });
       $("#btn2").click(function(){
