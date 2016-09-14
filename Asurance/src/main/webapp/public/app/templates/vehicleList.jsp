@@ -28,8 +28,7 @@ li { cursor: pointer; cursor: hand; }
 		<div class="row">
 			<div class="col-sm-12">
 				<h2 style="color: orange">Add vehicles to your quote.</h2>
-				<p>Bas
-				ed on your address, we found the following car:</p>
+				<p>Based on your address, we found the following car:</p>
 			</div>
 		</div>
 		<hr class="colorgraph">
