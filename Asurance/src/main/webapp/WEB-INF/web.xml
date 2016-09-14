@@ -30,6 +30,10 @@
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>dispatcher</servlet-name>
+<<<<<<< HEAD
 		<url-pattern>/logout</url-pattern>
+=======
+		<url-pattern>/questionnaire</url-pattern>
+>>>>>>> refs/remotes/origin/master
 	</servlet-mapping>
 </web-app>
