@@ -16,11 +16,11 @@
 </head>
 
 <body >
-    <div class="container-fluid" ng-controller="mainCtrl">
-        <div custom-header></div>
+    <div class="container-fluid"  ng-controller="mainCtrl">
+      
        
-      <!--   <div id="main" ng-include="templates.tabsUrl"></div> -->
-         <div ui-view ></div>
+        <div  ng-include="templates.tabsUrl"></div>
+      
         
     </div>
  <!-- <div ng-include="templates.footerUrl" id="footer"></div> -->

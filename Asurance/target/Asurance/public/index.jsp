@@ -31,7 +31,6 @@
     <script src= "public/app/configuration/config.js"></script>
     <script src= "public/app/components/customHeader.js"></script>
     <script src= "public/app/components/startPage.js"></script>
-    <script src= "public/app/components/vehicles.js"></script>
     <script src= "public/app/components/driverPage.js"></script>
     <script src= "public/app/components/stateController.js"></script>
     <script src= "public/app/components/formController.js"></script>

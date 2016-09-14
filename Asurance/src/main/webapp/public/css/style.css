@@ -26,9 +26,12 @@ body {
 	background-position: 0px 0px;
 	background-repeat: no-repeat;
     background-size: cover; 
-	animation: animatedBackground 30s linear infinite;
-	-webkit-animation:animatedBackground 30s linear infinite; /* Chrome, Safari, Opera */
+	animation: animatedBackground 5s linear infinite;
+	-webkit-animation:animatedBackground 5s linear infinite; /* Chrome, Safari, Opera */
 }
-
-
-
+/* input.ng-invalid.ng-pristine, select.ng-invalid.ng-pristine  {
+    border-color:red;
+}
+input.ng-valid, select.ng-valid {
+    border-color:green;
+} */

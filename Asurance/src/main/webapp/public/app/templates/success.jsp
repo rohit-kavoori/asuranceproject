@@ -17,6 +17,10 @@
 <title>Customer Details</title>
 </head>
 <body>
+<% Customer cust = (Customer) session.getAttribute("customer"); 
+	if(cust != null){
+%>
+
 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -45,5 +49,6 @@
 			</h3>
 		</div>
 	</div>
+	<%} %>
 </body>
 </html>

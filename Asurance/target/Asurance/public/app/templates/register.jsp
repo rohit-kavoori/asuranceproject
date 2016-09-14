@@ -7,7 +7,7 @@
 				</h2>
 				<hr class="colorgraph">
 			<form role="form" name="registerPage" ng-controller="startPageCtrl"
-				   action="saveCustomer" method="post" >
+				 novalidate  ng-submit="register(model)" >
 				 <span
 								class="text-error"
 								ng-show="registerPage.submitted && registerPage.$invalid"
@@ -87,9 +87,8 @@
 				<div class="form-group" ng-controller="stateController">
 					<select class="form-control input-lg" name="state"
 						ng-model="model.state" id="stateID"
-						  required>
+						ng-options="state.name for state in addState"  required>
 						<option value="">Select State</option>
-						<option ng-repeat="state in addState" value="{{state.name}}">{{state.name}}</option>
 					</select> <span class="text-error"
 						ng-show="registerPage.submitted && registerPage.state.$invalid"
 						ng-style="errorField">*</span>
@@ -138,7 +137,7 @@
 				<div class="row">
 					<div class="col-xs-12 col-md-6">
 						<input  type="submit" value="Register"
-							 class="btn btn-primary btn-block btn-lg" ng-click="register(model)" tabindex="7" >
+							class="btn btn-primary btn-block btn-lg" tabindex="7" >
 					</div>
 					<div class="col-xs-12 col-md-6">
 						<a ui-sref="login" href="#"

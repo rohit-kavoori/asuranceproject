@@ -1,10 +1,9 @@
 angular.module("components").controller(
 		'startPageCtrl',
-		function($scope, $http, $state) {
-			$scope.start = function(model) {
+		function($scope, $http) {
+			$scope.save = function(model) {
 				$scope.startPage.submitted = true;
 				if ($scope.startPage.$valid) {
-					$state.go("vehicles");
 					console.log(model);
 
 				} else {
@@ -19,9 +18,6 @@ angular.module("components").controller(
 					}
 				}
 			};
-			$scope.noThanks = function(){
-				$state.go("register");
-			};
 
 			$scope.register = function(model) {
 		
@@ -32,7 +28,7 @@ angular.module("components").controller(
 						&& model.password == model.passwordConfirmation) {
 					$scope.registerPage.isPasswordMatch = true;
 					
-					var formData = {
+					/*var formData = {
 						"firstName": model.firstName,
 						"lastName": model.lastName,
 						"dateOfBirth": model.dateOfBirth,
@@ -42,15 +38,15 @@ angular.module("components").controller(
 						"state": model.state,
 						"zip": model.zip,
 						"password": model.password
-					};
+					};*/
 					
-				/*	var submit = $http({
+			/*		var submit = $http({
 						method: "post",
 						url: "saveCustomer",
 						data: model,
 						headers: {'Content-Type': 'application/x-www-form-urlencoded'}
 					});*/
-					console.log(formData);
+				
 					
 					//$http.post('saveCustomer', formData);
 					/*response.success(function(data, status, headers, config) {
@@ -78,7 +74,7 @@ angular.module("components").controller(
 					console.log('Errors in form data');
 					$scope.errorField = {
 						"color" : "red",
-						"font-size" : "30px"
+						"font-size" : "24px"
 					}
 					$scope.errorField2 = {
 							"color" : "red"

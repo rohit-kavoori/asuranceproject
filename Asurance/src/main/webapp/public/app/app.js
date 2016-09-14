@@ -1,7 +1,7 @@
 (function () {
     "use strict";
-    angular.module("autoInsurance")
-        .controller("mainCtrl", ["$scope", "$rootScope", function ($scope, $rootScope) {
+   angular.module("autoInsurance")
+  .controller("mainCtrl", ["$scope", function ($scope) {
             var baseUrl = "public/app/templates/";
             $scope.templates = {
                 navbarUrl: baseUrl + "navbar.jsp",

@@ -18,7 +18,6 @@ public class RegistrationController {
 
 	@RequestMapping(value="/saveCustomer", method=RequestMethod.POST)
 	public ModelAndView saveCustomer(@ModelAttribute Customer customer, @ModelAttribute Address address) {
-		
 		System.out.println(customer);
 
 		boolean status = registrationService.saveCustomer(customer, address);
