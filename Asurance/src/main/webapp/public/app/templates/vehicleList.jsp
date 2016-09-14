@@ -64,7 +64,7 @@ li { cursor: pointer; cursor: hand; }
 			</div>
 			
 			<div class="col-sm-6">
-				<input type="submit" class="btn btn-md btn-primary" value="Save & Continue">
+				<input type="submit" class="btn btn-md btn-primary" id="goToQuestionaire" value="Save & Continue">
 			</div>
 		</div>
 	</div>
