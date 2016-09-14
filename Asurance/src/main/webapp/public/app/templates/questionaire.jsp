@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html">
-<html>
+<html ng-app="components">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <!-- <link rel="stylesheet" href="public/bower_components/bootstrap/dist/css/bootstrap.min.css">
@@ -13,6 +13,7 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="../../bower_components/angular/angular.js"></script>
 <title>Vehicle</title>
 <style>
 li {
@@ -22,7 +23,9 @@ li {
 </style>
 </head>
 <body>
-	<div class="container">
+<div navbar-header></div>
+	<div class="container" style="
+    margin-top: 86px;">
 
 		<form class="form-horizontal" method="post">
 			<div class="form-group">
@@ -214,5 +217,7 @@ li {
   
 });
 	</script>
+	<script src= "../modules/modules.js"></script>
+<script src= "../components/navbar-for-quote.js"></script>
 </body>
 </html>
