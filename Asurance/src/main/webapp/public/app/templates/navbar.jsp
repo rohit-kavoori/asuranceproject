@@ -2,6 +2,7 @@
 <nav class="navbar navbar-default navbar-fixed-top navbar-collapse" id="navbar">
   <div class="container-fluid">
     <ul class="nav navbar-nav">
+    <li ><div custom-logo></div></li>
       <li id="headerTitle">Assurance Insurance</li>
     </ul>
      <ul class="nav navbar-nav navbar-right">

@@ -30,6 +30,7 @@
    <script src="public/app/app.js"></script>
     <script src= "public/app/configuration/config.js"></script>
     <script src= "public/app/components/customHeader.js"></script>
+    <script src= "public/app/components/customLogo.js"></script>
     <script src= "public/app/components/startPage.js"></script>
     <script src= "public/app/components/vehicles.js"></script>
     <script src= "public/app/components/driverPage.js"></script>
