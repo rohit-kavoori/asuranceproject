@@ -2,11 +2,6 @@
 <nav class="navbar navbar-default navbar-fixed-top navbar-collapse" id="navbar">
   <div class="container-fluid">
     <ul class="nav navbar-nav">
-<<<<<<< HEAD
-     <li><div custom-logo></div></li>
-=======
-    <li ><div custom-logo></div></li>
->>>>>>> ead4b1cd84c2e27738b21b5e38e72c875e1c5af8
       <li id="headerTitle">Assurance Insurance</li>
     </ul>
      <ul class="nav navbar-nav navbar-right">
@@ -14,9 +9,9 @@
       <li data-toggle="modal" data-target="#loginModal"><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       <li ><a href="#"><span class="glyphicon glyphicon-edit"></span> Get Quote</a></li> -->
       
-      <li   ui-sref="register"><a href="register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li  ui-sref="login"><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      <li ui-sref="quote"><a href="quote"><span class="glyphicon glyphicon-edit"></span> Get Quote</a></li>
+      <li   ui-sref="register"><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li  ui-sref="login"><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <li ui-sref="quote"><a href="#"><span class="glyphicon glyphicon-edit"></span> Get Quote</a></li>
     </ul>
   </div>
 </nav>

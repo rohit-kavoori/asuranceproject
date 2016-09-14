@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	<%@ page import=" com.ekthasol.asurance.models.Vehicle" %>
+	<%@ page import="java.util.List" %>
+	<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html">
 <html>
 <head>
@@ -25,16 +28,19 @@ li { cursor: pointer; cursor: hand; }
 		<div class="row">
 			<div class="col-sm-12">
 				<h2 style="color: orange">Add vehicles to your quote.</h2>
-				<p>Based on your address, we found the following car:</p>
+				<p>Bas
+				ed on your address, we found the following car:</p>
 			</div>
 		</div>
 		<hr class="colorgraph">
+		<% List<Vehicle> vehicleList = (List<Vehicle>)session.getAttribute("vehicles"); %>
+    	<c:forEach items="${vehicleList}" var="vehicleList">
 		<div class="row">
 			<div class="col-sm-6">
-				<span id="selected" class="glyphicon glyphicon-ok"></span><p>${vehicleList.get(0).getYear() }
+				<span id="selected" class="glyphicon glyphicon-ok"></span><p>${vehicleList.getYear() }
 				<p>
-				<p>${vehicleList.get(0).getMake() }
-					${vehicleList.get(0).getModel() }</p>
+				<p>${vehicleList.getMake() }
+					${vehicleList.getModel() }</p>
 			</div>
 			<div class="col-sm-6">
 				<button type="button" class="btn btn-lg btn-default" id="btn1">
@@ -48,6 +54,7 @@ li { cursor: pointer; cursor: hand; }
 
 			</div>
 		</div>
+		</c:forEach>
 		<div class="row">
 		<div class="col-sm-12" id="noVehicle"><p>At least one vehicle should be added!</p></div>
 		</div>

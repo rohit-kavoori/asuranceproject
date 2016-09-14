@@ -7,26 +7,24 @@
 				</h2>
 				<hr class="colorgraph">
 			<form role="form" name="registerPage" ng-controller="startPageCtrl"
-				   action="saveCustomer" method="post"  >
+				   action="saveCustomer" method="post" >
 				 <span
 								class="text-error"
 								ng-show="registerPage.submitted && registerPage.$invalid"
-								ng-style="errorField2" >* = Required Fields</span> <br>
-							<span class="error"  ng-show="registerPage.submitted && registerPage.firstName.$error.pattern" ng-style="errorField2">First name should only contain letters</span>	
+								ng-style="errorField2">* Required Fields</span>
 								<br><br>
 				
 				<!-- <div class="form-group">
 					<input type="text" name="policyNumber" ng-model="model.policyNumber" id="policy_number" class="form-control input-lg" placeholder="Policy Number" tabindex="3" required>
 					<span class="text-error" ng-show="registerPage.submitted && registerPage.policyNumber.$invalid" ng-style="errorField">Policy Number is Required</span>
 				</div> -->
-			
 				<div class="row">
 					<div class="col-xs-12 col-sm-6 col-md-6">
 
 						<div class="form-group">
 							<input type="text" name="firstName" ng-model="model.firstName"
 								id="first_name" class="form-control input-lg"
-								placeholder="First Name" tabindex="1" ng-pattern="/^[a-zA-Z\s]*$/" required> <span
+								placeholder="First Name" tabindex="1" required> <span
 								class="text-error"
 								ng-show="registerPage.submitted && registerPage.firstName.$invalid"
 								ng-style="errorField">*</span>
@@ -89,8 +87,9 @@
 				<div class="form-group" ng-controller="stateController">
 					<select class="form-control input-lg" name="state"
 						ng-model="model.state" id="stateID"
-						ng-options="state.name for state in addState"  required>
+						  required>
 						<option value="">Select State</option>
+						<option ng-repeat="state in addState" value="{{state.name}}">{{state.name}}</option>
 					</select> <span class="text-error"
 						ng-show="registerPage.submitted && registerPage.state.$invalid"
 						ng-style="errorField">*</span>
@@ -138,15 +137,14 @@
 				<hr class="colorgraph">
 				<div class="row">
 					<div class="col-xs-12 col-md-6">
-						<input  value="Register"
-							 class="btn btn-primary btn-block btn-lg"  tabindex="7" ng-click="register(model)">
+						<input  type="submit" value="Register"
+							 class="btn btn-primary btn-block btn-lg" ng-click="register(model)" tabindex="7" >
 					</div>
 					<div class="col-xs-12 col-md-6">
 						<a ui-sref="login" href="#"
 							class="btn btn-success btn-block btn-lg">Sign In</a>
 					</div>
 				</div>
-				
 			</form>
 		</div>
 	</div>

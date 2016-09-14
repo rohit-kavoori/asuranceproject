@@ -1,9 +1,10 @@
 angular.module("components").controller(
 		'startPageCtrl',
-		function($scope, $http) {
-			$scope.save = function(model) {
+		function($scope, $http, $state) {
+			$scope.start = function(model) {
 				$scope.startPage.submitted = true;
 				if ($scope.startPage.$valid) {
+					$state.go("vehicles");
 					console.log(model);
 
 				} else {
@@ -18,14 +19,19 @@ angular.module("components").controller(
 					}
 				}
 			};
+			$scope.noThanks = function(){
+				$state.go("register");
+			};
 
 			$scope.register = function(model) {
 		
 				$scope.registerPage.submitted = true;
 				$scope.registerPage.isPasswordMatch = false;
+			
 				if ($scope.registerPage.$valid
 						&& model.password == model.passwordConfirmation) {
 					$scope.registerPage.isPasswordMatch = true;
+					
 					var formData = {
 						"firstName": model.firstName,
 						"lastName": model.lastName,
@@ -38,7 +44,15 @@ angular.module("components").controller(
 						"password": model.password
 					};
 					
-					$http.post('saveCustomer', formData);
+				/*	var submit = $http({
+						method: "post",
+						url: "saveCustomer",
+						data: model,
+						headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+					});*/
+					console.log(formData);
+					
+					//$http.post('saveCustomer', formData);
 					/*response.success(function(data, status, headers, config) {
 						$scope.responseData = data;
 					});
