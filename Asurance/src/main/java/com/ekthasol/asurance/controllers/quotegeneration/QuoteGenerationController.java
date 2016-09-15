@@ -26,9 +26,10 @@ public class QuoteGenerationController {
 	QuoteGenerationService quoteGenerationService;
 
 	@RequestMapping(value = "/getVehicles", method = RequestMethod.POST)
-	public ModelAndView getVehicles(@ModelAttribute Customer customer, @ModelAttribute Address address, HttpSession session) {
-		ModelAndView model = new ModelAndView();
+	public String getVehicles(@ModelAttribute Customer customer, @ModelAttribute Address address, HttpSession session) {
 		String output = quoteGenerationService.getListtoUI(address);
+		session.setAttribute("customer", customer);
+		session.setAttribute("address", address);
 		if (output != null) {
 			List<Vehicle> vehicleList = null;
 			ObjectMapper mapper = new ObjectMapper();
@@ -39,17 +40,19 @@ public class QuoteGenerationController {
 				e.printStackTrace();
 			}
 			
-			if (vehicleList != null){
-				session.setAttribute("customer", customer);
-				session.setAttribute("address", address);
+			if (vehicleList != null && !vehicleList.isEmpty()){
 				session.setAttribute("vehicleList", vehicleList);
-				model.setViewName("vehicleList");
-			}else
-				model.setViewName("failure");
+				return "vehicleList";
+			}else{
+				session.setAttribute("message", "No Vehicles found");
+				return "redirect:/#/quote";
+			}
 		}
-		else
-			model.setViewName("failure");
-		return model;
+		else{
+			
+			session.setAttribute("message", "Address did not match");
+			return "redirect:/#/quote";
+		}
 	}
 	
 	@RequestMapping(value = "/questionnaire", method = RequestMethod.POST)
