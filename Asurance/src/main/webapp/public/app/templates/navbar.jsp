@@ -2,7 +2,7 @@
 <nav class="navbar navbar-default navbar-fixed-top navbar-collapse" id="navbar">
   <div class="container-fluid">
     <ul class="nav navbar-nav">
-    <li style="margin-left: 790px"><div custom-logo></div></li>
+    <li style="margin-left: 540px"><div custom-logo></div></li>
     </ul>
      <ul class="nav navbar-nav navbar-right">
       <!-- <li data-toggle="modal" data-target="#registerModal" ui-sref="login"><a href="#/login"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
