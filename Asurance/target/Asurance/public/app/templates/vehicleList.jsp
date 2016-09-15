@@ -4,32 +4,34 @@
 	<%@ page import="java.util.List" %>
 	<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html">
-<html>
+<html ng-app="components">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <!-- <link rel="stylesheet" href="public/bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="public/bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
      <script src="public/bower_components/jquery/dist/jquery.min.js"></script> -->
+
 <link rel="stylesheet"
 	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="../../bower_components/angular/angular.js"></script>
 <title>Vehicle</title>
 <style>
 li { cursor: pointer; cursor: hand; }
 </style>
 </head>
 <body>
+<div navbar-header></div>
 
-
-	<div class="container-fluid text-center">
+	<div class="container-fluid text-center" style="
+    margin-top: 70px;">
 		<div class="row">
 			<div class="col-sm-12">
 				<h2 style="color: orange">Add vehicles to your quote.</h2>
-				<p>Bas
-				ed on your address, we found the following car:</p>
+				<p>Based on your address, we found the following car:</p>
 			</div>
 		</div>
 		<hr class="colorgraph">
@@ -61,15 +63,11 @@ li { cursor: pointer; cursor: hand; }
 		<hr class="colorgraph">
 		<div class="row">
 			<div class="col-sm-6">
-				<ul class="pager">
-					<li><a href="#">Previous</a></li>
-				</ul>
+				<button class="btn btn-md btn-primary" onClick="history.back()">Back</button>
 			</div>
 			
 			<div class="col-sm-6">
-				<ul class="pager">
-					<li id="goToQuestionaire"><a>Save & Continue</a></li>
-				</ul>
+				<input type="submit" class="btn btn-md btn-primary" id="goToQuestionaire" value="Save & Continue">
 			</div>
 		</div>
 	</div>
@@ -84,6 +82,7 @@ var count = 0;
         $("#btn1").hide();
         $("#btn2").show();
         $("#selected").show();
+        $("#noVehicle").hide();
         count++;
     });
       $("#btn2").click(function(){
@@ -103,5 +102,7 @@ var count = 0;
   
 });
 </script>
+<script src= "../modules/modules.js"></script>
+<script src= "../components/navbar-for-quote.js"></script>
 </body>
 </html>
