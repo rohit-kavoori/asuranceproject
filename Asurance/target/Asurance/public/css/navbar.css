@@ -6,11 +6,18 @@ color: #e01e1e;
 font-size: x-large;
 }
 #navbar{
-height: 60px;
+height: 70px;
 
 margin-top: 0px;
 margin-bottom: 0px;
 
+}
+
+#navbar ul li {
+	margin-top: 8px;
+}
+#navbar ul:nth-child(2) li {
+	font-size: 20px;
 }
 #breadcrumb {
 padding: 8px 160px;
@@ -33,7 +40,7 @@ font-size: 20px;
 
 
   #tabs{
-   	margin-top: 60px;
+   	margin-top: 70px;
    	background-color: #4c4848;
    	} 
  

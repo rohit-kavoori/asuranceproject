@@ -4,4 +4,5 @@ angular.module("components")
             templateUrl: "public/app/templates/customLogo.html",
             restrict: "A,E,C"
         };
+       
 }]);

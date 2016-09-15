@@ -30,11 +30,12 @@ li { cursor: pointer; cursor: hand; }
 		<div class="row">
 			<div class="col-sm-6">
 				<span id="selected" class="glyphicon glyphicon-ok"></span><small>PolicyHolder</small><br>
-				${vehicleList.get(0).getMake() }
+				${customer.getFirstName() }
+				${customer.getLastName() }
 			
 			</div>
 			<div class="col-sm-6">
-				<span>Added</span><br><button type="button" class="btn btn-lg btn-default" id="btn1">
+				<span>Added</span><br><button type="button" class="btn btn-lg btn-default" id="btn1" onClick="history.back()">
 					Edit
 				</button>
 
@@ -58,29 +59,15 @@ li { cursor: pointer; cursor: hand; }
 	
 		<div class="row">
 			<div class="col-sm-6">
-				<ul class="pager">
-					<li><a href="#">Previous</a></li>
-				</ul>
+				<button class="btn btn-md btn-primary" onClick="history.back()">Back</button>
+
 			</div>
 			
 			<div class="col-sm-6">
-				<ul class="pager">
-					<li id="goToFinalDetails"><a>Save & Continue</a></li>
-				</ul>
+				<input type="submit" class="btn btn-md btn-primary" value="Save & Continue">
 			</div>
 		</div>
 	</div>
 	
-	<script>
-$(document).ready(function(){
-var count = 0;
-    $("#btn1").click(function(){
-   window.location = "http://localhost:8080/Asurance/public/app/templates/questionaire.jsp"
-    });
-    
-  
-  
-});
-</script>
 </body>
 </html>

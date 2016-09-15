@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.ekthasol.asurance.models.Address;
+import com.ekthasol.asurance.models.Customer;
+import com.ekthasol.asurance.models.CustomerInfo;
 import com.ekthasol.asurance.models.Vehicle;
 import com.ekthasol.asurance.service.quotegeneration.QuoteGenerationService;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -24,7 +26,7 @@ public class QuoteGenerationController {
 	QuoteGenerationService quoteGenerationService;
 
 	@RequestMapping(value = "/getVehicles", method = RequestMethod.POST)
-	public ModelAndView getVehicles(@ModelAttribute("address") Address address, HttpSession session) {
+	public ModelAndView getVehicles(@ModelAttribute Customer customer, @ModelAttribute Address address, HttpSession session) {
 		ModelAndView model = new ModelAndView();
 		String output = quoteGenerationService.getListtoUI(address);
 		if (output != null) {
@@ -38,6 +40,8 @@ public class QuoteGenerationController {
 			}
 			
 			if (vehicleList != null){
+				session.setAttribute("customer", customer);
+				session.setAttribute("address", address);
 				session.setAttribute("vehicleList", vehicleList);
 				model.setViewName("vehicleList");
 			}else
@@ -49,9 +53,9 @@ public class QuoteGenerationController {
 	}
 	
 	@RequestMapping(value = "/questionnaire", method = RequestMethod.POST)
-	public ModelAndView getQuestions(@ModelAttribute("vehicles") Vehicle selectedVehicle){
+	public ModelAndView getQuestions(@ModelAttribute("vehicles") Vehicle selectedVehicle,HttpSession session){
 		
-		Vehicle vehicle = new Vehicle();
+		/*Vehicle vehicle = new Vehicle();
 		if(selectedVehicle.getIsSelected()){
 			
 			vehicle.setIsSelected(selectedVehicle.getIsSelected());
@@ -59,9 +63,28 @@ public class QuoteGenerationController {
 			vehicle.setYear(selectedVehicle.getYear());
 			vehicle.setMake(selectedVehicle.getMake());
 			vehicle.setModel(selectedVehicle.getModel());
-		}
+			session.setAttribute("selectedVehicle", vehicle);
+		}*/
+		session.setAttribute("selectedVehicle", selectedVehicle);
+		System.out.println(selectedVehicle.toString());
+		return new ModelAndView("questionaire","selectedVehicle", selectedVehicle);
+	}
+	
+	@RequestMapping(value = "/addDriver", method = RequestMethod.POST)
+	public ModelAndView addDriver(@ModelAttribute("questions") CustomerInfo customerInfo,HttpSession session){
 		
-		System.out.println(vehicle.toString());
-		return new ModelAndView("questionaire");
+		/*Vehicle vehicle = new Vehicle();
+		if(selectedVehicle.getIsSelected()){
+			
+			vehicle.setIsSelected(selectedVehicle.getIsSelected());
+			vehicle.setVin(selectedVehicle.getVin());
+			vehicle.setYear(selectedVehicle.getYear());
+			vehicle.setMake(selectedVehicle.getMake());
+			vehicle.setModel(selectedVehicle.getModel());
+			session.setAttribute("selectedVehicle", vehicle);
+		}*/
+		session.setAttribute("customerInfo", customerInfo);
+		System.out.println(customerInfo.toString());
+		return new ModelAndView("driverInfo");
 	}
 }

@@ -4,23 +4,16 @@
 <%@ page import="java.util.List"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html">
-<html ng-app="components">
+<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<<<<<<< HEAD
-<!-- <link rel="stylesheet" href="public/bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="public/bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
-     <script src="public/bower_components/jquery/dist/jquery.min.js"></script> -->
-
-=======
->>>>>>> refs/remotes/origin/master
 <link rel="stylesheet"
 	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script src="../../bower_components/angular/angular.js"></script>
+		<script src="public/bower_components/angular/angular.js"></script>
 <title>Vehicle</title>
 <style>
 li {
@@ -30,14 +23,9 @@ li {
 </style>
 </head>
 <body>
-<<<<<<< HEAD
 <div navbar-header></div>
-
 	<div class="container-fluid text-center" style="
-    margin-top: 70px;">
-=======
-	<div class="container-fluid text-center">
->>>>>>> refs/remotes/origin/master
+    margin-top: 86px;">
 		<div class="row">
 			<div class="col-sm-12">
 				<h2 style="color: orange">Add vehicles to your quote.</h2>
@@ -60,7 +48,7 @@ li {
 							type="text" name="model" value="${vehicleList.getModel() }"
 							style="border: none;"><br> <input type="text" name="isSelected"
 							id="${vehicleList.getVin() }selected" value="false"
-							style="visibility: hidden">
+							>
 					</div>
 					<div class="col-sm-6">
 						<button type="button" class="btn btn-lg btn-default addbtn"
@@ -97,44 +85,13 @@ li {
 	</div>
 
 	<script>
-<<<<<<< HEAD
-$(document).ready(function(){
-var count = 0;
-	$("#btn2").hide();
-	$("#noVehicle").hide();
-	$("#selected").hide();
-    $("#btn1").click(function(){
-        $("#btn1").hide();
-        $("#btn2").show();
-        $("#selected").show();
-        $("#noVehicle").hide();
-        count++;
-    });
-      $("#btn2").click(function(){
-        $("#btn2").hide();
-        $("#btn1").show();
-        $("#selected").hide();
-        count--;
-    });
-    $("#goToQuestionaire").click(function(){
-      if(count>0){
-      window.location = "http://localhost:8080/Asurance/public/app/templates/questionaire.jsp"
-      } else {
-      $("#noVehicle").show();
-      }
-    });
-  
-  
-});
-</script>
-<script src= "../modules/modules.js"></script>
-<script src= "../components/navbar-for-quote.js"></script>
-=======
 		$(document).ready(function() {
 			var count = 0;
+			 
 			$(".rmvbtn").hide();
 			$("#noVehicle").hide();
-			$(".selected").hide();
+			$(".selected").hide(); 
+			 
 			$(".addbtn").click(function() {
 				var addBtnId = $(this).attr('id');
 				$("#" + addBtnId).hide();
@@ -144,6 +101,8 @@ var count = 0;
 				$("#noVehicle").hide();
 				count++;
 			});
+		
+			
 			$(".rmvbtn").click(function() {
 				var rmvBtnId = $(this).attr('id');
 				var rmvString = rmvBtnId.substring(6);
@@ -153,9 +112,10 @@ var count = 0;
 				$("#selected" + rmvString).hide();
 				count--;
 			});
-
+			
 		});
 	</script>
->>>>>>> refs/remotes/origin/master
+	<script src= "public/app/modules/modules.js"></script>
+<script src= "public/app/components/navbar-for-quote.js"></script>
 </body>
 </html>
