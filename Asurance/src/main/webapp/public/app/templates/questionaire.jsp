@@ -85,7 +85,7 @@ li {
 				<small>(required for most accurate quote)</small></label>
 				<div class="col-sm-4">
 					<input class="form-control" name="ssn" maxlength="9" type="text"
-						 />
+						 required/>
 				</div>
 
 				<div class="col-sm-1">

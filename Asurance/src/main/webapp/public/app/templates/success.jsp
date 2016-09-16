@@ -39,8 +39,7 @@ footer{
 <%if(sessiona != null) {%>
 <% Customer customer = (Customer)session.getAttribute("customer"); %>
 	
-	 
-				</button>
+	 		</button>
 				<h2 style="color:white">Welcome <%=customer.getFirstName() %></h2>
 			
 			<div class="collapse navbar-collapse" id="myNavbar">
