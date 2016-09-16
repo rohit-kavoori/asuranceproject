@@ -1,4 +1,4 @@
-angular.module("components" , [])
+angular.module("components")
     .directive("navbarHeader", [function () {
         return {
             templateUrl: "navbar-for-quote.jsp",

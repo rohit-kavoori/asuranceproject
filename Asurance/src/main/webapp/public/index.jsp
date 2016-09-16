@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="public/css/style.css">
     <link rel="stylesheet" href="public/css/driverPage.css">
     <link href="public/css/navbar.css" rel="stylesheet">
+    <link href="public/css/footer.css" rel="stylesheet">
     <script src="public/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="public/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="public/bower_components/angular/angular.js"></script>
@@ -21,7 +22,9 @@
         <div custom-header></div>
        
       <!--   <div id="main" ng-include="templates.tabsUrl"></div> -->
-         <div ui-view ></div>
+         <div style="height:1200px" ui-view ></div>
+         
+         <div custom-footer></div>
         
     </div>
  <!-- <div ng-include="templates.footerUrl" id="footer"></div> -->
@@ -36,6 +39,7 @@
     <script src= "public/app/components/driverPage.js"></script>
     <script src= "public/app/components/stateController.js"></script>
     <script src= "public/app/components/formController.js"></script>
+     <script src= "public/app/components/footer.js"></script>
     <!-- <script src="app/components/route.js"></script> -->
    
     

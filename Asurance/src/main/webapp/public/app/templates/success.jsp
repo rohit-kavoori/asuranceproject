@@ -8,6 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" href="public/bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="public/bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link href="public/css/footer.css" rel="stylesheet">
      <script src="public/bower_components/jquery/dist/jquery.min.js"></script>
 <!-- <link rel="stylesheet"
 	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -29,7 +30,15 @@ footer{
       background-color: #555;
       color: white;
       padding: 15px;
-    }</style>
+    }
+    
+    .navbar-inverse {
+   /*  background-image: linear-gradient(to bottom,#3c3c3c 0,#f5f5f5 100%); */
+    }
+    .navbar-header ul li {
+    font-size: 30px;
+    }
+    </style>
  
 </head>
 <body ng-app="components">
@@ -38,22 +47,35 @@ footer{
 <%HttpSession sessiona = request.getSession(false); %>
 <%if(sessiona != null) {%>
 <% Customer customer = (Customer)session.getAttribute("customer"); %>
-	
-	 		</button>
-				<h2 style="color:white">Welcome <%=customer.getFirstName() %></h2>
-			
-			<div class="collapse navbar-collapse" id="myNavbar">
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="/Asurance/logout"><span class="glyphicon glyphicon-log-in"></span>
-							Logout</a></li>
-							
-				</ul>
-			</div>
-	</nav>
 
-	<div class="jumbotron">
-		<div class="container text-center">
-			<h1>My Profile</h1>
+	<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+      <ul class="nav navbar-nav ">
+     <li><a  href="/Asurance"><custom-logo></custom-logo></a></li>
+      <li style="margin-left: 330px; font-size:30px; margin-top:20px;"><span style="color:black">Welcome <%=customer.getFirstName()%></span></li>
+      </ul>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+    
+      <ul class="nav navbar-nav navbar-right">
+        <li style=" font-size:15px; margin-top:20px;"><a href="/Asurance/logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+	<div class="container " style="
+    margin-top: 70px;">
+	<div class="row">
+		<div class="col-sm-12">
+			<h1 style="color:blue">My Profile</h1>
 			<h3>
 				<label>First Name:</label> <label><b><%=customer.getFirstName()%></b></label><br>
 				<label>Last Name:</label> <label><b><%=customer.getLastName()%></b></label><br>
@@ -61,44 +83,10 @@ footer{
 		</div>
 	</div>
 	<%} %>
-    
-<footer class="container-fluid  text-center">
-  
-  <div>     
-     <div class="col-sm-4"> About us<br>
-					<a href="#">Blog</a><br>
-					<a href="#">Enterprise</a><br>
-					<a href="#">Site status</a></div>
-          
-    
-          
-          
-    <div class="col-sm-4">Application<br>
-					<a href="#">Product for Mac</a><br>
-        <a href="#">Product for Windows</a><br>
-					<a href="#">Product mobile apps</a>							
-				</div>
-      
-    <div class="col-sm-4">Others<br>
-					<a href="#">Contact Us</a><br>
-					<a href="#">Privacy & Security</a><br>
-          <a href="#">Support</a></div></div>
-    <div>&nbsp;</div>
-<div class="footer-para">
-
-    Auto insurance prices and products are different when purchased directly from Progressive or through agents/brokers. Auto quotes on this page are for policies purchased directly.
-
-Not available in all states and situations.
-In 2013, 84.57% of new customers surveyed nationally would recommend Progressive to a friend.
-
-National average annual savings by new customers surveyed who saved with Progressive November 2012 - March 2013.Customer selected due dates are available only for auto insurance policies where the customer has elected to pay via EFT.Insurance carrier Web site ranking by Keynote® Systems, a leading independent Internet analyst.
-    Copyright 1995 - 2016. Progressive Casualty Insurance Company. All Rights Reserved.</div>
-   <div class="col-sm-12">
-				<p >© 2013 Company Name. All rights reserved</p>
-			</div> 
-</footer>
+<div custom-footer></div>
 </div>
  <script src="public/app/modules/modules.js"></script>
-  <script src= "public/app/components/navbar-for-quote.js"></script>	 
+ <script src= "public/app/components/footer.js"></script>
+ <script src= "public/app/components/customLogo.js"></script>	 
 </body>
 </html>
