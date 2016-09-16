@@ -21,6 +21,22 @@ public class Vehicle {
 	private String make;
 	@Column(name = "model")
 	private String model;
+	private boolean isSelected;
+	
+
+	public boolean getIsSelected() {
+		return isSelected;
+	}
+
+	public void setIsSelected(boolean isSelected) {
+		this.isSelected = isSelected;
+	}
+
+	@Override
+	public String toString() {
+		return "Vehicle [vin=" + vin + ", year=" + year + ", make=" + make + ", model=" + model + ", isSelected="
+				+ isSelected + ", vechicleAddress=" + vechicleAddress + "]";
+	}
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "a_id")

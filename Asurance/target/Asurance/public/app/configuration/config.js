@@ -25,7 +25,7 @@
             $stateProvider.state("quote", quoteObj);
             $stateProvider.state("vehicles", vehicleObj);
     }]).run(["$state", function ($state) {
-            $state.go("register");
+            $state.go("quote");
     }])
 })();
 

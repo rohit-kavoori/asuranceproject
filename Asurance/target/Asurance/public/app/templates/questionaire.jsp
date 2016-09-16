@@ -193,9 +193,7 @@ li {
 			<hr class="colorgraph">
 			<div class="row">
 				<div class="col-sm-6">
-					<ul class="pager">
-						<li id="goToVehicles"><a>Previous</a></li>
-					</ul>
+					<button class="btn btn-md btn-primary" onClick="history.back()">Back</button>
 				</div>
 
 				<div class="col-sm-6">
@@ -209,7 +207,7 @@ li {
 	$(document).ready(function(){
     
       $("#goToVehicles").click(function(){
-      window.location = "http://localhost:8080/Asurance/backVehicles"
+      window.location = "http://localhost:8080/Asurance/public/app/templates/vehicleList.jsp"
     
     });
   
