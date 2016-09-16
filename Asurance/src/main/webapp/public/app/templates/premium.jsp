@@ -65,10 +65,9 @@ hr.style15 {
 			</div>
 		</div>
 	</nav>
-	<!-- <span>Total: $534.00         </span>
-        <span>                       Total: $476.00</span>-->
 
-	<hr class="style13" style="margin-top: 100px;">
+	<label id="quoteAmount" style="font-size: 50px;">$${quote.getQuoteAmount()}</label>
+	<hr class="style13" style="margin-top: 25px;">
 
 	<div class="row">
 		<div class="btn-group btn-group-lg" style="margin-left: 40px;">
@@ -76,10 +75,10 @@ hr.style15 {
 				value="Continue to Buy">
 		</div>
 
-		<div class="btn-group btn-group-lg" style="margin-left: 200px;">
+		<!-- <div class="btn-group btn-group-lg" style="margin-left: 200px;">
 			<input type="submit" class="btn btn-lg btn-success btn-block"
 				value="Continue to Buy">
-		</div>
+		</div> -->
 	</div>
 	<h3 style="margin-left: 25px; color: #3884C9;">
 		<Strong>Policy Coverages</Strong>
@@ -122,14 +121,14 @@ hr.style15 {
 
 						<div class="radio">
 							<label><input type="radio" name="optradio"><strong>Recommended</strong></label>
-							<span style="margin-left: 240px;">-$46</span>
+							<span style="margin-left: 240px;">+$46</span>
 						</div>
 
 						<hr class="style15">
 
 						<div class="radio">
 							<label><input type="radio" name="optradio">$50k/$100k/$25k</label>
-							<span style="margin-left: 240px;">-$2</span>
+							<span style="margin-left: 240px;">+$35</span>
 						</div>
 
 						<hr class="style15">
@@ -150,7 +149,7 @@ hr.style15 {
 
 						<div class="radio">
 							<label><input type="radio" name="optradio">$100/$300k/$100k</label>
-							<span style="margin-left: 235px;">-$87</span>
+							<span style="margin-left: 235px;">+$87</span>
 						</div>
 
 						<hr class="style15">
@@ -191,8 +190,8 @@ hr.style15 {
 		</div>
 
 
-		<span style="margin-left: 40px; color: grey;">$25k/$50k/$25k</span> <span
-			style="margin-left: 80px; color: grey;">$476</span>
+		<span id="liabilitySelection" style="margin-left: 40px; color: grey;">$25k/$50k/$25k</span> 
+		<span id="liabilityAmount" style="margin-left: 80px; color: grey;">$476</span>
 	</div>
 
 	<hr class="style14">
@@ -235,13 +234,14 @@ hr.style15 {
 
 						<div class="radio">
 							<label><input type="radio" name="optradio">No
-								coverage</label> <span style="margin-left: 240px;">-$2</span>
+								coverage</label> <span style="margin-left: 240px;">$0</span>
 						</div>
 
 						<hr class="style15">
 
 						<div class="radio">
 							<label><input type="radio" name="optradio"><strong>Recommended</strong></label>
+							<span style="margin-left: 240px;">+$25</span>
 							<h5 style="margin-left: 20px;">$25k/$50k</h5>
 						</div>
 
@@ -497,7 +497,7 @@ hr.style15 {
 	<hr class="style14">
 
 	<h3 style="margin-left: 25px; color: #3884C9;">
-		<strong>2003 Toyota Camry Coverages</strong>
+		<strong>${selectedVehicle.getYear() } ${selectedVehicle.getMake() } ${selectedVehicle.getModel() } Coverages</strong>
 	</h3>
 
 	<div>
@@ -771,10 +771,10 @@ hr.style15 {
 		<a href="policyNumber.html" class="btn btn-lg btn-primary btn-block"
 			style="margin-left: 30px;">Continue to Buy</a>
 	</div>
-	<div class="btn-group btn-group-lg">
+	<!-- <div class="btn-group btn-group-lg">
 		<a href="policyNumber.html" class="btn btn-lg btn-primary btn-block"
 			style="margin-left: 60px;">Continue to Buy</a>
-	</div>
+	</div> -->
 
 	<hr class="colorgraph">
 		
