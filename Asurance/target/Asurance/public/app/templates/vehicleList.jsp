@@ -48,7 +48,7 @@ li {
 		<form method="post" action="questionnaire" id="form">
 			<c:forEach items="${vehicleList}" var="vehicleList">
 				<hr class="colorgraph">
-				<div class="row">
+				<div class="row" id="formDiv">
 					<div class="col-sm-6">
 						<span id="selected${vehicleList.getVin() }"
 							class="glyphicon glyphicon-ok selected"></span> <input
@@ -64,7 +64,8 @@ li {
 							id="model${vehicleList.getVin() }"
 							value="${vehicleList.getModel() }" style="border: none;"><br>
 						<input type="text" name="isSelected"
-							id="${vehicleList.getVin() }selected" value="false">
+							id="${vehicleList.getVin() }selected" value="${vehicleList.getIsSelected() }"
+							style="border: none; visibility: hidden;">
 					</div>
 					<div class="col-sm-6">
 						<button type="button" class="btn btn-lg btn-default addbtn"
@@ -108,7 +109,7 @@ li {
 				</div>
 
 				<div class="col-sm-6">
-					<input class="btn btn-md btn-primary"
+					<input type="button" class="btn btn-md btn-primary"
 						value="Save & Continue" id="submit">
 				</div>
 >>>>>>> 5a964b10b5c794616d18816df6d29ed051786be7
@@ -153,10 +154,22 @@ var count = 0;
 		$(document).ready(function() {
 			var count = 0;
 			var addBtnId = "";
+			var vinId = $("#formDiv input:nth-child(2)").val();
+			console.log(vinId);
+			var selected = $("#" + vinId + "selected").val();
+			console.log(selected);
+			
 			 $("#navbar").load('/Asurance/public/app/templates/navbar-for-quote.html');
 			$(".rmvbtn").hide();
 			$("#noVehicle").hide();
 			$(".selected").hide(); 
+			if(selected){
+				$("#selected" + vinId).show();
+				$("#" + vinId).hide();
+				$("#remove" + vinId).show();
+				count++;
+				}
+			
 			 
 			$(".addbtn").click(function() {
 				 addBtnId = $(this).attr('id');
@@ -188,7 +201,11 @@ var count = 0;
 					$("#noVehicle").show();
 				}  else {
 					$("#submit").attr('type' , 'submit');
+					$("#submit").bind("click", function(){
+							console.log("clicked");
+						});
 					}
+					
 				
 				
 				}); 

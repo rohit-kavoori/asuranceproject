@@ -1,4 +1,3 @@
-com\ekthasol\asurance\dao\registration\RegistrationDAO.class
 com\ekthasol\asurance\models\Vehicle.class
 com\ekthasol\asurance\dao\login\LoginDAO.class
 com\ekthasol\asurance\models\CustomerInfo.class
@@ -6,7 +5,9 @@ com\ekthasol\asurance\controllers\login\LoginController.class
 com\ekthasol\asurance\controllers\quotegeneration\QuoteGenerationController.class
 com\ekthasol\asurance\service\registration\RegistrationService.class
 com\ekthasol\asurance\controllers\registration\RegistrationController.class
-com\ekthasol\asurance\models\Address.class
 com\ekthasol\asurance\service\quotegeneration\QuoteGenerationService.class
+com\ekthasol\asurance\dao\registration\RegistrationDAO.class
+com\ekthasol\asurance\models\Address.class
+com\ekthasol\asurance\models\Quote.class
 com\ekthasol\asurance\models\Customer.class
 com\ekthasol\asurance\service\login\LoginService.class

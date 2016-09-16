@@ -35,7 +35,7 @@ li {
 		<div class="row">
 			<div class="col-sm-6">
 				<span id="selected" class="glyphicon glyphicon-ok"></span><small>PolicyHolder</small><br>
-				${customer.getFirstName() } ${customer.getLastName() }
+				<label style="font-size:20px;">${customer.getFirstName() } ${customer.getLastName() }</label>
 
 			</div>
 			<div class="col-sm-6">

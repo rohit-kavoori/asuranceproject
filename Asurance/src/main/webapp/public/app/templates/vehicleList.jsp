@@ -49,7 +49,8 @@ li {
 							id="model${vehicleList.getVin() }"
 							value="${vehicleList.getModel() }" style="border: none;"><br>
 						<input type="text" name="isSelected"
-							id="${vehicleList.getVin() }selected" value="${vehicleList.getIsSelected() }">
+							id="${vehicleList.getVin() }selected" value="${vehicleList.getIsSelected() }"
+							style="border: none; visibility: hidden;">
 					</div>
 					<div class="col-sm-6">
 						<button type="button" class="btn btn-lg btn-default addbtn"
