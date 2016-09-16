@@ -19,7 +19,11 @@
 						<a href="" class="btn btn-link pull-right">Forgot Password?</a>
 					</span>
 					<%if(failure != null) {%><div id="wrongCredential" style="color:red"><%=failure %></div>
+<<<<<<< HEAD
 					<%} %>
+=======
+					<%} session.invalidate();%>
+>>>>>>> 5a964b10b5c794616d18816df6d29ed051786be7
 					
 					<hr class="colorgraph">
 					<div class="row">

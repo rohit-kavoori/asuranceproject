@@ -15,12 +15,32 @@ public class Vehicle {
 	@Id
 	@Column(name = "vin")
 	private String vin;
+	public Vehicle() {
+		
+	}
+
 	@Column(name = "year")
 	private String year;
 	@Column(name = "make")
 	private String make;
 	@Column(name = "model")
 	private String model;
+	private String isSelected;
+	
+
+	public String getIsSelected() {
+		return isSelected;
+	}
+
+	public void setIsSelected(String isSelected) {
+		this.isSelected = isSelected;
+	}
+
+	@Override
+	public String toString() {
+		return "Vehicle [vin=" + vin + ", year=" + year + ", make=" + make + ", model=" + model + ", isSelected="
+				+ isSelected + ", vechicleAddress=" + vechicleAddress + "]";
+	}
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "a_id")
