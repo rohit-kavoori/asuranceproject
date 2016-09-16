@@ -90,4 +90,9 @@ public class QuoteGenerationController {
 		System.out.println(customerInfo.toString());
 		return new ModelAndView("driverInfo");
 	}
+	@RequestMapping(value = "/premium", method = RequestMethod.GET)
+	   public String goToPremium() {
+			
+	      return ("premium");
+	   }
 }

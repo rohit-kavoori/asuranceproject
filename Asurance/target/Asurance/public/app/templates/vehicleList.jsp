@@ -13,7 +13,6 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		<script src="public/bower_components/angular/angular.js"></script>
 <title>Vehicle</title>
 <style>
 li {
@@ -23,32 +22,34 @@ li {
 </style>
 </head>
 <body>
-<div navbar-header></div>
-	<div class="container-fluid text-center" style="
-    margin-top: 86px;">
+	<div id="navbar"></div>
+	<div class="container-fluid text-center" style="margin-top: 86px;">
 		<div class="row">
 			<div class="col-sm-12">
 				<h2 style="color: orange">Add vehicles to your quote.</h2>
 				<p>Based on your address, we found the following car:</p>
 			</div>
 		</div>
-		<form method="post" action="questionnaire">
+		<form method="post" action="questionnaire" id="form">
 			<c:forEach items="${vehicleList}" var="vehicleList">
 				<hr class="colorgraph">
 				<div class="row">
 					<div class="col-sm-6">
 						<span id="selected${vehicleList.getVin() }"
 							class="glyphicon glyphicon-ok selected"></span> <input
-							type="text" name="vin" value="${vehicleList.getVin() }"
+							type="text" name="vin" id="vin${vehicleList.getVin() }"
+							value="${vehicleList.getVin() }"
 							style="border: none; visibility: hidden;"><br> <label>Year:</label><input
-							type="text" name="year" value="${vehicleList.getYear() }"
-							style="border: none;"><br> <label>Make:</label><input
-							type="text" name="make" value="${vehicleList.getMake() }"
-							style="border: none;"><br> <label>Model:</label><input
-							type="text" name="model" value="${vehicleList.getModel() }"
-							style="border: none;"><br> <input type="text" name="isSelected"
-							id="${vehicleList.getVin() }selected" value="false"
-							>
+							type="text" name="year" id="year${vehicleList.getVin() }"
+							value="${vehicleList.getYear() }" style="border: none;"><br>
+						<label>Make:</label><input type="text" name="make"
+							id="make${vehicleList.getVin() }"
+							value="${vehicleList.getMake() }" style="border: none;"><br>
+						<label>Model:</label><input type="text" name="model"
+							id="model${vehicleList.getVin() }"
+							value="${vehicleList.getModel() }" style="border: none;"><br>
+						<input type="text" name="isSelected"
+							id="${vehicleList.getVin() }selected" value="false">
 					</div>
 					<div class="col-sm-6">
 						<button type="button" class="btn btn-lg btn-default addbtn"
@@ -77,8 +78,8 @@ li {
 				</div>
 
 				<div class="col-sm-6">
-					<input type="submit" class="btn btn-md btn-primary"
-						value="Save & Continue">
+					<input class="btn btn-md btn-primary"
+						value="Save & Continue" id="submit">
 				</div>
 			</div>
 		</form>
@@ -87,13 +88,14 @@ li {
 	<script>
 		$(document).ready(function() {
 			var count = 0;
-			 
+			var addBtnId = "";
+			 $("#navbar").load('/Asurance/public/app/templates/navbar-for-quote.html');
 			$(".rmvbtn").hide();
 			$("#noVehicle").hide();
 			$(".selected").hide(); 
 			 
 			$(".addbtn").click(function() {
-				var addBtnId = $(this).attr('id');
+				 addBtnId = $(this).attr('id');
 				$("#" + addBtnId).hide();
 				$("#remove" + addBtnId).show();
 				$("#selected" + addBtnId).show();
@@ -111,11 +113,47 @@ li {
 				$("#" + rmvString + "selected").val(false);
 				$("#selected" + rmvString).hide();
 				count--;
+				if(count == 0){
+					$("#noVehicle").show();
+				}
+				
 			});
 			
+			 $("#submit").click(function(){
+				if(count==0){
+					$("#noVehicle").show();
+				}  else {
+					$("#submit").attr('type' , 'submit');
+					}
+				
+				
+				}); 
+				
+			/* else {
+				
+				$.post('questionnaire', $('#form').serialize());
+				
+				/* $.ajax({
+				     url:'questionaire',
+				     data: $("#form").serialize(),
+				     success: function (data) {
+				          console.log("success");
+				    }
+				}); */
+				
+				
+					/* var form = $(this).parents('form');
+					console.log(form);
+					$.post("questionnaire", form, 
+					function(data, status){
+						console.log(status);
+						console.log(data);
+					
+						}); */
+					
+		
 		});
 	</script>
-	<script src= "public/app/modules/modules.js"></script>
-<script src= "public/app/components/navbar-for-quote.js"></script>
+
 </body>
 </html>

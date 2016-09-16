@@ -13,7 +13,6 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script src="public/bower_components/angular/angular.js"></script>
 <title>Vehicle</title>
 <style>
 li {
@@ -23,7 +22,7 @@ li {
 </style>
 </head>
 <body>
-<div navbar-header></div>
+<div id="navbar"></div>
 	<div class="container" style="
     margin-top: 86px;">
 
@@ -209,15 +208,10 @@ li {
 	<script>
 	$(document).ready(function(){
     
-      $("#goToVehicles").click(function(){
-      window.location = "http://localhost:8080/Asurance/public/app/templates/vehicleList.jsp"
-    
-    });
-  
+		 $("#navbar").load('/Asurance/public/app/templates/navbar-for-quote.html');
   
 });
 	</script>
-	<script src= "public/app/modules/modules.js"></script>
-<script src= "public/app/components/navbar-for-quote.js"></script>
+
 </body>
 </html>

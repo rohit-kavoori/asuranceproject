@@ -22,6 +22,7 @@
 		<url-pattern>/getCustomer</url-pattern>
 		<url-pattern>/getVehicles</url-pattern>
 		<url-pattern>/logout</url-pattern>
+		<url-pattern>/premium</url-pattern>
 		<url-pattern>/questionnaire</url-pattern>
 		<url-pattern>/addDriver</url-pattern>
 	</servlet-mapping>
