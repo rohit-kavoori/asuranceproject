@@ -83,6 +83,7 @@ hr.style15 {
 			<Strong>Policy Coverages</Strong>
 		</h3>
 
+<!-- Liability BI/PD plan -->
 		<div>
 			<span style="margin-left: 25px;">Liability(BI/PD) <large>
 				<span class="glyphicon glyphicon-question-sign"></span></large></span>
@@ -104,8 +105,8 @@ hr.style15 {
 
 
 						<div class="modal-body">
-							<p>We pay the costs that you’re responsible for, up to the
-								limit you choose, as a result of an accident. If you’re sued,
+							<p>We pay the costs that youâre responsible for, up to the
+								limit you choose, as a result of an accident. If youâre sued,
 								we pay for a lawyer to defend you.</p>
 							<br>
 							<hr class="style13">
@@ -118,7 +119,7 @@ hr.style15 {
 
 							<hr class="style15">
 
-							<div class="radio" id="recommended">
+							<div class="radio">
 								<label><input type="radio" name="optradio" value="Recommended" id="recommend"><strong>Recommended</strong></label>
 								<span style="margin-left: 240px;" class="liabilityOption">+$46</span>
 							</div>
@@ -177,6 +178,7 @@ hr.style15 {
 
 		<hr class="style14">
 
+<!-- Uninsured Motoroist BI plan -->
 		<div>
 			<span style="margin-left: 25px;">Uninsured Motorist BI<span
 				class="glyphicon glyphicon-question-sign"></span></span>
@@ -200,7 +202,7 @@ hr.style15 {
 						<div class="modal-body">
 							<p>We pay for medical expenses and in some cases other
 								benefits up to the limit you choose, for you and your
-								passengers, when you’re in an accident caused by a driver who
+								passengers, when youâre in an accident caused by a driver who
 								has no insurance.</p>
 							<br>
 							<hr class="style13">
@@ -214,33 +216,36 @@ hr.style15 {
 							<hr class="style15">
 
 							<div class="radio">
-								<label><input type="radio" name="optradio">No
-									coverage</label> <span style="margin-left: 240px;">$0</span>
+								<label><input type="radio" name="optradio" value="No
+									coverage" id="noCoverage">No
+									coverage</label>
+									 <span style="margin-left: 240px;" class="uninsuredOption">Current</span>
 							</div>
 
 							<hr class="style15">
 
 							<div class="radio">
-								<label><input type="radio" name="optradio"><strong>Recommended</strong></label>
-								<span style="margin-left: 240px;">+$25</span>
+								<label><input type="radio" name="optradio" value="Recommended" id="recommended">Recommended</label>
+								<span style="margin-left: 240px;" class="uninsuredOption">+$25</span>
 								<h5 style="margin-left: 20px;">$25k/$50k</h5>
 							</div>
 
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-default"
-								data-dismiss="modal">Update</button>
+								data-dismiss="modal" id="uninsuredMotorist">Update</button>
 						</div>
 					</div>
 
 				</div>
 			</div>
-			<span style="margin-left: 40px; color: grey;">No coverage</span> <span
-				style="margin-left: 120px; color: grey;">$0</span>
+			<span id="uninsuredSelection" style="margin-left: 40px; color: grey;">No coverage</span> 
+			<span id="uninAmt0" class="uninAmount" style="margin-left: 120px; color: grey;">$0</span>
 		</div>
 
 		<hr class="style14">
 
+<!-- UnderInsured Motorist BI plan -->
 		<div>
 			<span style="margin-left: 25px;">Underinsured Motorist BI<span
 				class="glyphicon glyphicon-question-sign"></span></span>
@@ -264,8 +269,8 @@ hr.style15 {
 						<div class="modal-body">
 							<p>We pay for medical expenses and in some cases other
 								benefits up to the limit you choose, for you and your
-								passengers, when you’re in an accident caused by a driver who
-								doesn’t have enough insurance to cover these expenses.</p>
+								passengers, when youâre in an accident caused by a driver who
+								doesnât have enough insurance to cover these expenses.</p>
 							<br>
 							<hr class="style13">
 							<span><strong>Coverage</strong></span> <span
@@ -278,21 +283,21 @@ hr.style15 {
 							<hr class="style15">
 
 							<div class="radio">
-								<label><input type="radio" name="optradio">No
-									coverage</label> <span style="margin-left: 240px;">-$2</span>
+								<label><input type="radio" name="optradio" value="Current" id="current">No
+									coverage</label> <span style="margin-left: 240px;" class="underinsuredOption">Current</span>
 							</div>
 
 							<hr class="style15">
 
 							<div class="radio">
-								<label><input type="radio" name="optradio"><strong>Recommended</strong></label>
-								<h5 style="margin-left: 20px;">$25k/$50k</h5>
+								<label><input type="radio" name="optradio" value="Recommended" id="recommended25k"><strong>Recommended</strong></label>
+								<span style="margin-left: 240px;" class="underinsuredOption">+$35</span><h5 style="margin-left: 20px;">$25k/$50k</h5>
 							</div>
 
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-default"
-								data-dismiss="modal">Update</button>
+								data-dismiss="modal" id="underInsuredBI">Update</button>
 						</div>
 					</div>
 
@@ -300,11 +305,14 @@ hr.style15 {
 			</div>
 
 
-			<span style="margin-left: 40px; color: grey;">No coverage</span> <span
-				style="margin-left: 120px; color: grey;">$0</span>
+			<span id="underinsuredSelection" style="margin-left: 40px; color: grey;">No coverage</span> 
+			<span id="underinAmt0" class="underinAmount" style="margin-left: 120px; color: grey;">$0</span>
 		</div>
 
 		<hr class="style14">
+		
+		
+		<!-- Uninsured Motorist PD Plan -->
 
 		<div>
 			<span style="margin-left: 25px;">Uninsured Motorist PD<span
@@ -328,7 +336,7 @@ hr.style15 {
 
 						<div class="modal-body">
 							<p>We pay to repair damage to your vehicle caused by a driver
-								who doesn’t have insurance.</p>
+								who doesnât have insurance.</p>
 							<br>
 							<hr class="style13">
 							<span><strong>Coverage</strong></span> <span
@@ -341,21 +349,22 @@ hr.style15 {
 							<hr class="style15">
 
 							<div class="radio">
-								<label><input type="radio" name="optradio">No
-									coverage</label> <span style="margin-left: 240px;">-$2</span>
+								<label><input type="radio" name="optradio" value="Current" id="unInsuredNoCoverage">No
+									coverage</label> <span class="unInsuredMotoristOption" style="margin-left: 240px;">Current</span>
 							</div>
 
 							<hr class="style15">
 
 							<div class="radio">
-								<label><input type="radio" name="optradio"><strong>Recommended</strong></label>
-								<h5 style="margin-left: 20px;">$25k/$50k</h5>
+								<label><input type="radio" name="optradio" value="Recommended" id="unInsuredRecommended"><strong>Recommended</strong></label>
+								<span class="unInsuredMotoristOption" style="margin-left: 240px;">+$25</span>
+								<!-- <h5 style="margin-left: 20px;">$25k/$50k</h5> -->
 							</div>
 
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-default"
-								data-dismiss="modal">Update</button>
+								data-dismiss="modal" id="unInsuredMotoristPD">Update</button>
 						</div>
 					</div>
 
@@ -363,11 +372,13 @@ hr.style15 {
 			</div>
 
 
-			<span style="margin-left: 40px; color: grey;">No coverage</span> <span
-				style="margin-left: 120px; color: grey;">$0</span>
+			<span id="uninsuredMotoristSelection" style="margin-left: 40px; color: grey;">No coverage</span>
+			 <span	id="unInAmt0" class="underinPDAmount" style="margin-left: 120px; color: grey;">$0</span>
 		</div>
 
 		<hr class="style14">
+
+<!-- Personal Injury Plan -->
 
 		<div>
 			<span style="margin-left: 25px;">Personal Injury Protection<span
@@ -392,7 +403,7 @@ hr.style15 {
 						<div class="modal-body">
 							<p>We pay for medical expenses, lost wages, and, in some
 								cases, other benefits if you are injured or killed as a result
-								of an accident, no matter who’s at fault.</p>
+								of an accident, no matter whoâs at fault.</p>
 							<br>
 							<hr class="style13">
 							<span><strong>Coverage</strong></span> <span
@@ -405,81 +416,50 @@ hr.style15 {
 							<hr class="style15">
 
 							<div class="radio">
-								<label><input type="radio" name="optradio">No
-									coverage</label> <span style="margin-left: 240px;">-$2</span>
+								<label><input type="radio" name="optradio" value="No
+									coverage" id="personalInjuryCurrent" >No
+									coverage</label> <span class="personalInjuryOption" style="margin-left: 240px;">Current</span>
 							</div>
 
 							<hr class="style15">
 
 							<div class="radio">
-								<label><input type="radio" name="optradio">$5k
-									Accidental death</label>
+								<label><input type="radio" name="optradio" value="$5k" id="personalInjury5k">$5k
+									Accidental death</label><span class="personalInjuryOption" style="margin-left: 240px;">+$5</span>
 							</div>
 
 							<hr class="style15">
 
 							<div class="radio">
-								<label><input type="radio" name="optradio">$5k
-									Accidental death & Income disability</label>
+								<label><input type="radio" name="optradio" value="$10k" id="personalInjury10k">$10k
+									Accidental death & Income disability</label><span class="personalInjuryOption" style="margin-left: 240px;">+$10</span>
 							</div>
 
 							<hr class="style15">
 
 							<div class="radio">
-								<label><input type="radio" name="optradio">$5k
-									Medical Hospital & Accidental death</label>
+								<label><input type="radio" name="optradio" value="$5k" id="personalInjuryMedical">$5k
+									Medical Hospital & Accidental death</label><span class="personalInjuryOption" style="margin-left: 240px;">+$5</span>
 							</div>
 
-							<hr class="style15">
-
-							<div class="radio">
-								<label><input type="radio" name="optradio">Income
-									disability</label>
-							</div>
-
-							<hr class="style15">
-
-							<div class="radio">
-								<label><input type="radio" name="optradio">$5k
-									Medical Hospital</label>
-							</div>
-
-							<hr class="style15">
-
-							<div class="radio">
-								<label><input type="radio" name="optradio">$5k
-									Medical Hospital & Income disability</label>
-							</div>
-
-							<hr class="style15">
-
-							<div class="radio">
-								<label><input type="radio" name="optradio">$5k
-									Medical Hospital & Income $5k Accidental death</label>
-							</div>
-
-							<hr class="style15">
-
-							<div class="radio">
-								<label><input type="radio" name="optradio"> $10k
-									Medical Hospital & Income $5k Accidental death</label>
-							</div>
-
+							
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-default"
-								data-dismiss="modal">Update</button>
+								data-dismiss="modal" id="personalInjury">Update</button>
 						</div>
 					</div>
 
 				</div>
 			</div>
 
-			<span style="margin-left: 40px; color: grey;">No coverage</span> <span
-				style="margin-left: 120px; color: grey;">$0</span>
+			<span id="personalInjurySelection" style="margin-left: 40px; color: grey;">No coverage</span> 
+			<span id="personalInjAmt0" class="personalAmount" style="margin-left: 120px; color: grey;">$0</span>
 		</div>
 
 		<hr class="style14">
+
+			<!-- Comphrenesive plan -->
 
 		<h3 style="margin-left: 25px; color: #3884C9;">
 			<strong>${selectedVehicle.getYear() }
@@ -488,7 +468,7 @@ hr.style15 {
 		</h3>
 
 		<div>
-			<span style="margin-left: 25px;">Comprehensie<span
+			<span style="margin-left: 25px;">Comprehensive<span
 				class="glyphicon glyphicon-question-sign"></span></span>
 			<div class="btn-group btn-group-lg" style="margin-left: 360px;">
 				<button type="button" class="btn btn-default" data-toggle="modal"
@@ -522,60 +502,69 @@ hr.style15 {
 							<hr class="style15">
 
 							<div class="radio">
-								<label><input type="radio" name="optradio">No
-									coverage</label> <span style="margin-left: 240px;">-$2</span>
+								<label><input type="radio" name="optradio"
+									value="No coverage" id="noCoverage">No coverage</label> <span
+									style="margin-left: 240px;" class="compOption">Current</span>
 							</div>
 
 							<hr class="style15">
 
 							<div class="radio">
-								<label><input type="radio" name="optradio">$100
-									deductible</label>
+								<label><input type="radio" name="optradio"
+									value="$100 deductible" id="100">$100 deductible</label> <span
+									style="margin-left: 240px;" class="compOption">+$140</span>
 							</div>
 
 							<hr class="style15">
 
 							<div class="radio">
-								<label><input type="radio" name="optradio">$250
-									deductible</label>
+								<label><input type="radio" name="optradio"
+									value="$200 deductible" id="200">$200 deductible</label> <span
+									style="margin-left: 240px;" class="compOption">+$108</span>
 							</div>
 
 							<hr class="style15">
 
 							<div class="radio">
-								<label><input type="radio" name="optradio">$500
-									deductible</label>
+								<label><input type="radio" name="optradio"
+									value="$500 deductible" id="500">$500 deductible</label> <span
+									style="margin-left: 240px;" class="compOption">+$86</span>
 							</div>
 
 							<hr class="style15">
 
 							<div class="radio">
-								<label><input type="radio" name="optradio">$1,000
-									deductible</label>
+								<label><input type="radio" name="optradio"
+									value="$1000 deductible" id="1000">$1000 deductible</label> <span
+									style="margin-left: 240px;" class="compOption">+$54</span>
 							</div>
 
 							<hr class="style15">
 
 							<div class="radio">
-								<label><input type="radio" name="optradio">$2,000
-									deductible</label>
+								<label><input type="radio" name="optradio"
+									value="$2000 deductible" id="2000">$2000 deductible</label> <span
+									style="margin-left: 240px;" class="compOption">+$34</span>
 							</div>
 
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-default"
-								data-dismiss="modal">Update</button>
+								data-dismiss="modal" id="comprehensive">Update</button>
 						</div>
 					</div>
 				</div>
 			</div>
 
 
-			<span style="margin-left: 40px; color: grey;">No coverage</span> <span
+			<span id="compSelection" style="margin-left: 40px; color: grey;">No
+				Coverage</span> <span id="cpAmt0" class="compAmount"
 				style="margin-left: 120px; color: grey;">$0</span>
 		</div>
 
 		<hr class="style14">
+
+	<!-- 	Collison Plan -->
 
 		<div>
 			<span style="margin-left: 25px;">Collision<span
@@ -613,23 +602,67 @@ hr.style15 {
 							<hr class="style15">
 
 							<div class="radio">
-								<label><input type="radio" name="optradio">No
-									coverage</label> <span style="margin-left: 240px;">-$2</span>
+								<label><input type="radio" name="optradio"
+									value="No coverage" id="noCollisionCoverage">No coverage</label> <span
+									style="margin-left: 240px;" class="collOption">Current</span>
+							</div>
+
+							<hr class="style15">
+
+							<div class="radio">
+								<label><input type="radio" name="optradio"
+									value="$100 deductible" id="100coll">$100 deductible</label> <span
+									style="margin-left: 240px;" class="collOption">+$401</span>
+							</div>
+
+							<hr class="style15">
+
+							<div class="radio">
+								<label><input type="radio" name="optradio"
+									value="$200 deductible" id="200coll">$200 deductible</label> <span
+									style="margin-left: 240px;" class="collOption">+$294</span>
+							</div>
+
+							<hr class="style15">
+
+							<div class="radio">
+								<label><input type="radio" name="optradio"
+									value="$500 deductible" id="500coll">$500 deductible</label> <span
+									style="margin-left: 240px;" class="collOption">+$234</span>
+							</div>
+
+							<hr class="style15">
+
+							<div class="radio">
+								<label><input type="radio" name="optradio"
+									value="$1000 deductible" id="1000coll">$1000 deductible</label>
+								<span style="margin-left: 240px;" class="collOption">+$155</span>
+							</div>
+
+							<hr class="style15">
+
+							<div class="radio">
+								<label><input type="radio" name="optradio"
+									value="$2000 deductible" id="2000coll">$2000 deductible</label>
+								<span style="margin-left: 240px;" class="collOption">+$105</span>
 							</div>
 
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-default"
-								data-dismiss="modal">Update</button>
+								data-dismiss="modal" id="collision">Update</button>
 						</div>
 					</div>
 				</div>
 			</div>
-			<span style="margin-left: 40px; color: grey;">No coverage</span> <span
+			<span id="collSelection" style="margin-left: 40px; color: grey;">No
+				Coverage</span> <span id="clAmt0" class="collAmount"
 				style="margin-left: 120px; color: grey;">$0</span>
 		</div>
 
 		<hr class="style14">
+
+		<!-- Rental Plan -->
 
 		<div>
 			<span style="margin-left: 25px;">Rental<span
@@ -666,23 +699,51 @@ hr.style15 {
 							<hr class="style15">
 
 							<div class="radio">
-								<label><input type="radio" name="optradio">No
-									coverage</label> <span style="margin-left: 240px;">-$2</span>
+								<label><input type="radio" name="optradio"
+									value="No coverage" id="noRentalCoverage">No coverage</label> <span
+									style="margin-left: 240px;" class="rentOption">Current</span>
+							</div>
+
+							<hr class="style15">
+
+							<div class="radio">
+								<label><input type="radio" name="optradio"
+									value="$30 per day" id="30rent">$30 per day<br>($900
+									maximum)</label> <span style="margin-left: 240px;" class="rentOption">+$35</span>
+							</div>
+
+							<hr class="style15">
+
+							<div class="radio">
+								<label><input type="radio" name="optradio"
+									value="$40 per day" id="40rent">$40 per day<br>($1200
+									maximum)</label> <span style="margin-left: 240px;" class="rentOption">+$50</span>
+							</div>
+
+							<hr class="style15">
+
+							<div class="radio">
+								<label><input type="radio" name="optradio"
+									value="$50 per day" id="50rent">$50 per day<br>($1500
+									maximum)</label> <span style="margin-left: 240px;" class="rentOption">+$67</span>
 							</div>
 
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-default"
-								data-dismiss="modal">Update</button>
+								data-dismiss="modal" id="rental">Update</button>
 						</div>
 					</div>
 				</div>
 			</div>
-			<span style="margin-left: 40px; color: grey;">No coverage</span> <span
+			<span id="rentSelection" style="margin-left: 40px; color: grey;">No
+				Coverage</span> <span id="rtAmt0" class="rentAmount"
 				style="margin-left: 120px; color: grey;">$0</span>
 		</div>
 
 		<hr class="style14">
+
+		<!-- RoadSide Plan -->
 
 		<div>
 			<span style="margin-left: 25px;">Roadside<span
@@ -719,45 +780,36 @@ hr.style15 {
 
 							<hr class="style15">
 
-							<div class="radio">
-								<label><input type="radio" name="optradio">No
-									coverage</label> <span style="margin-left: 240px;">-$2</span>
+								<div class="radio">
+								<label><input type="radio" name="optradio"
+									value="No coverage" id="noRoadCoverage">No coverage</label> <span
+									style="margin-left: 240px;" class="roadOption">Current</span>
 							</div>
 
 							<hr class="style15">
 
 							<div class="radio">
-								<label><input type="radio" name="optradio">Coverage
-									selected</label>
+								<label><input type="radio" name="optradio"
+									value="Coverage selected" id="coverageSelected">Coverage selected</label> <span
+									style="margin-left: 240px;" class="roadOption">+$24</span>
 							</div>
 
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-default"
-								data-dismiss="modal">Update</button>
+								data-dismiss="modal" id="roadside">Update</button>
 						</div>
 					</div>
 				</div>
 			</div>
 
-			<span style="margin-left: 40px; color: grey;">No coverage</span> <span
+			<span id="roadSelection" style="margin-left: 40px; color: grey;">No
+				Coverage</span> <span id="rdAmt0" class="roadAmount"
 				style="margin-left: 120px; color: grey;">$0</span>
 		</div>
 
 		<hr class="style14">
 
-		<div>
-			<span style="margin-left: 25px;">Snapshot<span
-				class="glyphicon glyphicon-question-sign"></span></span>
-			<div class="btn-group btn-group-lg" style="margin-left: 390px;">
-				<button type="button" class="btn btn-default" data-toggle="modal"
-					data-target="#myModal">Edit</button>
-			</div>
-			<span style="margin-left: 40px; color: grey;">No coverage</span> <span
-				style="margin-left: 120px; color: grey;">$0</span>
-		</div>
-
-		<hr class="style14">
 		<div class="btn-group btn-group-lg">
 			<a href="policyNumber.html" class="btn btn-lg btn-primary btn-block"
 				style="margin-left: 30px;">Continue to Buy</a>
