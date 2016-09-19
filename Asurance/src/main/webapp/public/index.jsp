@@ -22,11 +22,12 @@
         <div custom-header></div>
        
       <!--   <div id="main" ng-include="templates.tabsUrl"></div> -->
-         <div style="height:1200px" ui-view ></div>
+         <div  ui-view ></div>
          
-         <div custom-footer></div>
+         
         
     </div>
+    <div custom-footer></div>
  <!-- <div ng-include="templates.footerUrl" id="footer"></div> -->
    <!--   <script src= "app/js/index.js"></script> -->
 

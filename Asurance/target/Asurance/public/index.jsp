@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="public/css/style.css">
     <link rel="stylesheet" href="public/css/driverPage.css">
     <link href="public/css/navbar.css" rel="stylesheet">
+    <link href="public/css/footer.css" rel="stylesheet">
     <script src="public/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="public/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="public/bower_components/angular/angular.js"></script>
@@ -16,13 +17,17 @@
 </head>
 
 <body >
+
     <div class="container-fluid" ng-controller="mainCtrl">
         <div custom-header></div>
        
       <!--   <div id="main" ng-include="templates.tabsUrl"></div> -->
-         <div ui-view ></div>
+         <div  ui-view ></div>
+         
+         
         
     </div>
+    <div custom-footer></div>
  <!-- <div ng-include="templates.footerUrl" id="footer"></div> -->
    <!--   <script src= "app/js/index.js"></script> -->
 
@@ -32,10 +37,10 @@
     <script src= "public/app/components/customHeader.js"></script>
     <script src= "public/app/components/customLogo.js"></script>
     <script src= "public/app/components/startPage.js"></script>
-    <script src= "public/app/components/vehicles.js"></script>
     <script src= "public/app/components/driverPage.js"></script>
     <script src= "public/app/components/stateController.js"></script>
     <script src= "public/app/components/formController.js"></script>
+     <script src= "public/app/components/footer.js"></script>
     <!-- <script src="app/components/route.js"></script> -->
    
     

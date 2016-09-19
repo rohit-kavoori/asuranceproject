@@ -8,8 +8,7 @@
     <li ><a data-toggle="tab" href="">Final Details</a></li>
     <li ><a data-toggle="tab" href="">Rate</a></li>
   </ol> -->
-   <h2 id="heading">Let's Start</h2>
-
+   <h2 id="heading">Let's Start</h2><span class="glyphicons glyphicons-user"></span>
 </nav>
 
 <!-- <div class="tab-content">

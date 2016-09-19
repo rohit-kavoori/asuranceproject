@@ -6,12 +6,33 @@ color: #e01e1e;
 font-size: x-large;
 }
 #navbar{
-height: 60px;
+height: 70px;
 
 margin-top: 0px;
 margin-bottom: 0px;
 
 }
+/* .navbar-nav {
+float:none;
+margin:0 auto;
+display: block;
+text-align: center;
+}
+
+.navbar-nav>li {
+display: inline-block;
+float:none;
+} */
+
+#navbar ul li {
+	margin-top: 8px;
+}
+#myNavbar ul li {
+	font-size: 20px;
+}
+
+
+
 #breadcrumb {
 padding: 8px 160px;
 margin-bottom: 0px;
@@ -33,7 +54,7 @@ font-size: 20px;
 
 
   #tabs{
-   	margin-top: 60px;
+   	margin-top: 70px;
    	background-color: #4c4848;
    	} 
  
@@ -59,9 +80,4 @@ input[type=text], input[type=password], input[type=date], select {
 	margin-bottom: 80px;
 }
 
-/*#state.ng-invalid.ng-touched , input.ng-invalid.ng-touched {
-    border-color:red;
-}
-#state.ng-valid, input.ng-valid {
-    border-color:green;
-}*/
+
