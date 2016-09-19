@@ -8,13 +8,15 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import org.springframework.web.client.RestTemplate;
+
 import com.ekthasol.asurance.models.Address;
 import com.ekthasol.asurance.models.Quote;
 import com.google.gson.Gson;
 
 public class QuoteGenerationService {
 	
-	public String getListtoUI(Address address) {
+	public String getVehiclesList(Address address) {
 
 		Gson gson = new Gson();
 		String jsonInString = gson.toJson(address);
@@ -62,11 +64,16 @@ public class QuoteGenerationService {
 
 	}
 	
-	public Quote getQuoteAmount(){
+	public Quote getQuoteAmount(Quote quote){
 		
-		Quote quote = new Quote("1",576.00,81.00);
+		 final String uri = "http://localhost:8080/QuoteGenerationApp/getQuote";
+		 
+		    RestTemplate restTemplate = new RestTemplate();
+		    Quote resultQuote = restTemplate.postForObject( uri, quote, Quote.class);
+		 
+		    System.out.println(resultQuote);
 		
-		return quote;
+		return resultQuote;
 	}
 
 }

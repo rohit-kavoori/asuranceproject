@@ -135,15 +135,14 @@ li {
 			<div class="form-group">
 				<label class="col-sm-3 control-label">Years Licensed </label>
 				<div class="col-sm-4">
-					<select class="form-control" name="licensedYears" required>
-						<option value=""></option>
-						<option value="2016">2016</option>
-						<option value="2015">2015</option>
-						<option value="2014">2014</option>
-						<option value="2013">2013</option>
-						<option value="2012">2012</option>
-						<option value="2011">2011</option>
-					</select>
+					<input class="form-control" name="years" type="number" >
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label class="col-sm-3 control-label">DL Number</label>
+				<div class="col-sm-4">
+					<input class="form-control" name="licenseNumber" type="text" required>
 				</div>
 			</div>
 			<hr class="line">
@@ -154,7 +153,7 @@ li {
 				<label class="col-sm-3 control-label">Primary Email Address<br>
 				<small>(We will NOT sell your email address.)</small></label>
 				<div class="col-sm-4">
-					<input class="form-control" name="emailPrimary" type="email"
+					<input class="form-control" name="primaryEmail" type="email"
 						required>
 				</div>
 			</div>

@@ -1,7 +1,9 @@
 package com.ekthasol.asurance.controllers.quotegeneration;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,10 +27,12 @@ public class QuoteGenerationController {
 
 	@Autowired
 	QuoteGenerationService quoteGenerationService;
-
+	
+	public static List<String> licenseList = new ArrayList<String>();
+	
 	@RequestMapping(value = "/getVehicles", method = RequestMethod.POST)
 	public String getVehicles(@ModelAttribute Customer customer, @ModelAttribute Address address, HttpSession session) {
-		String output = quoteGenerationService.getListtoUI(address);
+		String output = quoteGenerationService.getVehiclesList(address);
 		session.setAttribute("customer", customer);
 		session.setAttribute("address", address);
 		if (output != null) {
@@ -67,16 +71,32 @@ public class QuoteGenerationController {
 	@RequestMapping(value = "/addDriver", method = RequestMethod.POST)
 	public ModelAndView addDriver(@ModelAttribute CustomerInfo customerInfo,HttpSession session){
 		
+		if(licenseList.size() == 2)
+			licenseList.clear();
+		licenseList.add(customerInfo.getLicenseNumber());
+		session.setAttribute("licenseList", licenseList);
+		for(String license:licenseList)
+			System.out.println(license);
 		session.setAttribute("customerInfo", customerInfo);
 		System.out.println(customerInfo.toString());
 		return new ModelAndView("driverInfo");
 	}
 	
-	@RequestMapping(value = "/premium", method = RequestMethod.GET)
-	public String goToPremium(HttpSession session) {
+	@RequestMapping(value = "/premium", method = RequestMethod.POST)
+	public String goToPremium(HttpSession session,HttpServletRequest request) {
 
-		Quote quote = quoteGenerationService.getQuoteAmount(); 
-		session.setAttribute("quote", quote);
+		CustomerInfo custInfo = (CustomerInfo) request.getAttribute("customerInfo");
+		Vehicle vehicleInfo = (Vehicle) request.getAttribute("selectedVehicle");
+		
+		Quote inputQuote = new Quote();
+		inputQuote.setEducation(custInfo.getEducation());
+		inputQuote.setLicenseList(licenseList);
+		inputQuote.setSsn(custInfo.getSsn());
+		inputQuote.setVin(vehicleInfo.getVin());
+		inputQuote.setYear(vehicleInfo.getYear());
+		
+		Quote resultQuote = quoteGenerationService.getQuoteAmount(inputQuote); 
+		session.setAttribute("quote", resultQuote);
 		return ("premium");
 	}
 }
