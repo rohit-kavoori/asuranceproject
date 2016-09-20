@@ -1,0 +1,28 @@
+@CHARSET "ISO-8859-1";
+
+div.footer-para {
+	text-align: justify;
+	margin: 20px 150px 20px 150px;
+	font-size: 10px;
+}
+
+footer {
+	position: relative;
+	bottom: 0;
+	height:250px;
+	background-color: #555;
+	color: white;
+	padding: 15px;
+}
+
+@media screen and (max-width: 767px) {
+    #myNavbar {
+        background-color: black;
+        margin-top: 20px;
+    }
+}
+@media screen and (max-width: 968px) {
+     footer {
+    min-height: 535px;
+    }
+}

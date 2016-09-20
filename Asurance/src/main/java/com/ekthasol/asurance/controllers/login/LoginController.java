@@ -25,7 +25,7 @@ public class LoginController {
 	
 	@RequestMapping(value = "/getCustomer",method = RequestMethod.POST)
 		public String getCustomer(@ModelAttribute("customer") Customer customer, HttpSession session, HttpServletResponse  response) {
-			response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+		response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
 			Customer cust = null;
 			try {
 				cust = loginService.getCustomer(customer.getEmail(), customer.getPassword());

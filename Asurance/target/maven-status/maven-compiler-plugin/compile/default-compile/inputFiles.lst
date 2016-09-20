@@ -1,13 +1,11 @@
-C:\BCJ_MAY16\Develop\ASURANCE\Rohit Application\asuranceproject\Asurance\src\main\java\com\ekthasol\asurance\models\Vehicle.java
-C:\BCJ_MAY16\Develop\ASURANCE\Rohit Application\asuranceproject\Asurance\src\main\java\com\ekthasol\asurance\service\quotegeneration\QuoteGenerationService.java
-C:\BCJ_MAY16\Develop\ASURANCE\Rohit Application\asuranceproject\Asurance\src\main\java\com\ekthasol\asurance\controllers\quotegeneration\QuoteGenerationController.java
-C:\BCJ_MAY16\Develop\ASURANCE\Rohit Application\asuranceproject\Asurance\src\main\java\com\ekthasol\asurance\controllers\login\LoginController.java
-C:\BCJ_MAY16\Develop\ASURANCE\Rohit Application\asuranceproject\Asurance\src\main\java\com\ekthasol\asurance\service\login\LoginService.java
-C:\BCJ_MAY16\Develop\ASURANCE\Rohit Application\asuranceproject\Asurance\src\main\java\com\ekthasol\asurance\models\Address.java
-C:\BCJ_MAY16\Develop\ASURANCE\Rohit Application\asuranceproject\Asurance\src\main\java\com\ekthasol\asurance\models\Quote.java
-C:\BCJ_MAY16\Develop\ASURANCE\Rohit Application\asuranceproject\Asurance\src\main\java\com\ekthasol\asurance\controllers\registration\RegistrationController.java
-C:\BCJ_MAY16\Develop\ASURANCE\Rohit Application\asuranceproject\Asurance\src\main\java\com\ekthasol\asurance\dao\login\LoginDAO.java
-C:\BCJ_MAY16\Develop\ASURANCE\Rohit Application\asuranceproject\Asurance\src\main\java\com\ekthasol\asurance\dao\registration\RegistrationDAO.java
-C:\BCJ_MAY16\Develop\ASURANCE\Rohit Application\asuranceproject\Asurance\src\main\java\com\ekthasol\asurance\service\registration\RegistrationService.java
-C:\BCJ_MAY16\Develop\ASURANCE\Rohit Application\asuranceproject\Asurance\src\main\java\com\ekthasol\asurance\models\Customer.java
-C:\BCJ_MAY16\Develop\ASURANCE\Rohit Application\asuranceproject\Asurance\src\main\java\com\ekthasol\asurance\models\CustomerInfo.java
+D:\git\asuranceproject\Asurance\src\main\java\com\ekthasol\asurance\controllers\registration\RegistrationController.java
+D:\git\asuranceproject\Asurance\src\main\java\com\ekthasol\asurance\controllers\login\LoginController.java
+D:\git\asuranceproject\Asurance\src\main\java\com\ekthasol\asurance\service\registration\RegistrationService.java
+D:\git\asuranceproject\Asurance\src\main\java\com\ekthasol\asurance\dao\login\LoginDAO.java
+D:\git\asuranceproject\Asurance\src\main\java\com\ekthasol\asurance\controllers\quotegeneration\QuoteGenerationController.java
+D:\git\asuranceproject\Asurance\src\main\java\com\ekthasol\asurance\models\Address.java
+D:\git\asuranceproject\Asurance\src\main\java\com\ekthasol\asurance\service\login\LoginService.java
+D:\git\asuranceproject\Asurance\src\main\java\com\ekthasol\asurance\dao\registration\RegistrationDAO.java
+D:\git\asuranceproject\Asurance\src\main\java\com\ekthasol\asurance\models\Customer.java
+D:\git\asuranceproject\Asurance\src\main\java\com\ekthasol\asurance\models\Vehicle.java
+D:\git\asuranceproject\Asurance\src\main\java\com\ekthasol\asurance\service\quotegeneration\QuoteGenerationService.java

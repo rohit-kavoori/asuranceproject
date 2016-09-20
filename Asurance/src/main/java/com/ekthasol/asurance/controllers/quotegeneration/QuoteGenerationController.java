@@ -1,9 +1,7 @@
 package com.ekthasol.asurance.controllers.quotegeneration;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,9 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.ekthasol.asurance.models.Address;
-import com.ekthasol.asurance.models.Customer;
-import com.ekthasol.asurance.models.CustomerInfo;
-import com.ekthasol.asurance.models.Quote;
 import com.ekthasol.asurance.models.Vehicle;
 import com.ekthasol.asurance.service.quotegeneration.QuoteGenerationService;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -27,14 +22,11 @@ public class QuoteGenerationController {
 
 	@Autowired
 	QuoteGenerationService quoteGenerationService;
-	
-	public static List<String> licenseList = new ArrayList<String>();
-	
+
 	@RequestMapping(value = "/getVehicles", method = RequestMethod.POST)
-	public String getVehicles(@ModelAttribute Customer customer, @ModelAttribute Address address, HttpSession session) {
-		String output = quoteGenerationService.getVehiclesList(address);
-		session.setAttribute("customer", customer);
-		session.setAttribute("address", address);
+	public ModelAndView getVehicles(@ModelAttribute("address") Address address, HttpSession session) {
+		ModelAndView model = new ModelAndView();
+		String output = quoteGenerationService.getListtoUI(address);
 		if (output != null) {
 			List<Vehicle> vehicleList = null;
 			ObjectMapper mapper = new ObjectMapper();
@@ -45,58 +37,31 @@ public class QuoteGenerationController {
 				e.printStackTrace();
 			}
 			
-			if (vehicleList != null && !vehicleList.isEmpty()){
+			if (vehicleList != null){
 				session.setAttribute("vehicleList", vehicleList);
-				return "vehicleList";
-			}else{
-				session.setAttribute("message", "No Vehicles found");
-				return "redirect:/#/quote";
-			}
+				model.setViewName("vehicleList");
+			}else
+				model.setViewName("failure");
 		}
-		else{
-			
-			session.setAttribute("message", "Address did not match");
-			return "redirect:/#/quote";
-		}
+		else
+			model.setViewName("failure");
+		return model;
 	}
 	
 	@RequestMapping(value = "/questionnaire", method = RequestMethod.POST)
-	public ModelAndView getQuestions(@ModelAttribute Vehicle selectedVehicle,HttpSession session){
+	public ModelAndView getQuestions(@ModelAttribute("vehicles") Vehicle selectedVehicle){
 		
-		session.setAttribute("selectedVehicle", selectedVehicle);
-		System.out.println(selectedVehicle.toString());
+		Vehicle vehicle = new Vehicle();
+		if(selectedVehicle.getIsSelected()){
+			
+			vehicle.setIsSelected(selectedVehicle.getIsSelected());
+			vehicle.setVin(selectedVehicle.getVin());
+			vehicle.setYear(selectedVehicle.getYear());
+			vehicle.setMake(selectedVehicle.getMake());
+			vehicle.setModel(selectedVehicle.getModel());
+		}
+		
+		System.out.println(vehicle.toString());
 		return new ModelAndView("questionaire");
-	}
-	
-	@RequestMapping(value = "/addDriver", method = RequestMethod.POST)
-	public ModelAndView addDriver(@ModelAttribute CustomerInfo customerInfo,HttpSession session){
-		
-		if(licenseList.size() == 2)
-			licenseList.clear();
-		licenseList.add(customerInfo.getLicenseNumber());
-		session.setAttribute("licenseList", licenseList);
-		for(String license:licenseList)
-			System.out.println(license);
-		session.setAttribute("customerInfo", customerInfo);
-		System.out.println(customerInfo.toString());
-		return new ModelAndView("driverInfo");
-	}
-	
-	@RequestMapping(value = "/premium", method = RequestMethod.POST)
-	public String goToPremium(HttpSession session,HttpServletRequest request) {
-
-		CustomerInfo custInfo = (CustomerInfo) request.getAttribute("customerInfo");
-		Vehicle vehicleInfo = (Vehicle) request.getAttribute("selectedVehicle");
-		
-		Quote inputQuote = new Quote();
-		inputQuote.setEducation(custInfo.getEducation());
-		inputQuote.setLicenseList(licenseList);
-		inputQuote.setSsn(custInfo.getSsn());
-		inputQuote.setVin(vehicleInfo.getVin());
-		inputQuote.setYear(vehicleInfo.getYear());
-		
-		Quote resultQuote = quoteGenerationService.getQuoteAmount(inputQuote); 
-		session.setAttribute("quote", resultQuote);
-		return ("premium");
 	}
 }
