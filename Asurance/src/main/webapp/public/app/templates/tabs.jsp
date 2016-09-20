@@ -11,12 +11,8 @@
    <h2 id="heading">Let's Start</h2><span class="glyphicons glyphicons-user"></span>
 </nav>
 
-<!-- <div class="tab-content">
-  <div  class="tab-pane fade in active">
-  	<div id="start" start-page>
-	</div>
-  </div> -->
-  <div id="start" start-page>
+
+  <div id="quotePage" start-page>
  
 </div>
 

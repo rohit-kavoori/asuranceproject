@@ -32,7 +32,6 @@ float:none;
 }
 
 
-
 #breadcrumb {
 padding: 8px 160px;
 margin-bottom: 0px;
@@ -78,6 +77,13 @@ font-size: 20px;
 }
 #registerForm form {
 	margin-bottom: 80px;
+}
+#quotePage {
+    margin-top: 153px;
+    margin-bottom: 150px;
+    }
+#login{
+	margin-bottom: 362px;
 }
 
 

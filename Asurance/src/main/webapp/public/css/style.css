@@ -10,16 +10,16 @@
 
 
 
-@keyframes animatedBackground {
+/* @keyframes animatedBackground {
 	from { background-position: 0 0; }
 	to { background-position: 100% 0; }
 }
 
-/* Chrome, Safari, Opera */
+Chrome, Safari, Opera
 @-webkit-keyframes animatedBackground {
     from { background-position: 0 0; }
     to { background-position: 100% 0;}
-}
+} */
 
 body { 
 	background-image: url(../images/car-background.jpg);

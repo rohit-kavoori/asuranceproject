@@ -104,10 +104,6 @@
 						ng-style="errorField">*</span>
 				</div>
 
-				<!-- 	<div class="form-group">
-					<input type="text" name="username" ng-model="model.username"  id="Username" class="form-control input-lg" placeholder="Username" tabindex="4" required>
-					<span class="text-error" ng-show="registerPage.submitted && registerPage.username.$invalid" ng-style="errorField">Username is Required</span>
-				</div> -->
 				<div class="row">
 					<div class="col-xs-12 col-sm-6 col-md-6">
 						<div class="form-group">

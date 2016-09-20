@@ -1,4 +1,4 @@
-<footer class="text-center" style="left: 0px; margin-top: 400px;">
+<div class="text-center">
 
 	<div class="row">
 		<div class="col-sm-4">
@@ -35,4 +35,4 @@
 	<div>© 1995 - 2016. Asurance Casualty Insurance
 		Company. All rights reserved</div>
 
-</footer>
+</div>

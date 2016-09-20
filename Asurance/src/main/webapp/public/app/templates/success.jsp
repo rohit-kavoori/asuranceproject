@@ -69,13 +69,16 @@ float:none;
       
       <ul class="nav navbar-nav navbar-right">
         <li><a href="logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+        <li><a href="/Asurance"><span class="glyphicon glyphicon-home"></span> Home </a></li>
       </ul>
     </div>
   </div>
 </nav>
 
 <div class="container " style="
-    margin-top: 70px;">
+    margin-top: 70px;
+    margin-bottom: 484px;
+    ">
 	<div class="row">
 		<div class="col-sm-12">
 			<h1 style="color:blue">Welcome <%=customer.getFirstName()%></h1>
@@ -88,7 +91,7 @@ float:none;
 	
 </div>
 <%}%>
-<div custom-footer></div>
+<footer custom-footer></footer>
  <script src="public/app/modules/modules.js"></script>
  <script src= "public/app/components/footer.js"></script>
  <script src= "public/app/components/customLogo.js"></script>	 
