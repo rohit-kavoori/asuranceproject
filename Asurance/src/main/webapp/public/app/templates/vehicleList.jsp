@@ -57,14 +57,11 @@ li {
 						<button type="button" class="btn btn-lg btn-default addbtn"
 							id="${vehicleList.getVin() }">
 							<span class="glyphicon glyphicon-plus"></span>Add to quote
-
 						</button>
 						<button type="button" class="btn btn-lg btn-default rmvbtn"
 							id="remove${vehicleList.getVin() }">
 							<span class="glyphicon glyphicon-minus"></span>Remove
-
 						</button>
-
 					</div>
 				</div>
 			</c:forEach>
@@ -82,7 +79,7 @@ li {
 					<a class="btn btn-md btn-primary" href="/Asurance">Cancel</a>
 				</div>
 				<div class="col-sm-4">
-					<input  type="" class="btn btn-md btn-primary" value="Save & Continue" id="submit">
+					<input  type="submit" class="btn btn-md btn-primary" value="Save & Continue" id="submit">
 				</div>
 				
 			</div>
@@ -118,6 +115,7 @@ li {
 				$("#" + addBtnId + "selected").val(true);
 				$("#noVehicle").hide();
 				count++;
+				$('input[type="submit"]').prop('disabled', false);
 			});
 		
 			
@@ -131,6 +129,7 @@ li {
 				count--;
 				if(count == 0){
 					$("#noVehicle").show();
+					 $('input[type="submit"]').prop('disabled', true);
 				}
 				
 			});
@@ -138,8 +137,8 @@ li {
 			 $("#submit").click(function(){
 				if(count==0){
 					$("#noVehicle").show();
+					 $('input[type="submit"]').prop('disabled', true);
 				}  else {
-					$("#submit").attr('type' , 'submit');
 					$("#submit").bind("click", function(){
 							console.log("clicked");
 						});

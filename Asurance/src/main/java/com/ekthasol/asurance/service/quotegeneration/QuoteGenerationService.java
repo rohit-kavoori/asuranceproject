@@ -108,7 +108,7 @@ public class QuoteGenerationService {
 						result = mapper.readValue(outputtoUI,
 								Quote.class);
 						result.setQuoteAmount(6*result.getQuoteAmount());
-						result.setLiability((0.6*result.getQuoteAmount()));
+						result.setLiability(0.6*result.getQuoteAmount());
 					} catch (Exception e) {
 						e.printStackTrace();
 					}

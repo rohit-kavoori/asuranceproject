@@ -6,9 +6,9 @@ public class Quote {
 
 	
 	private String quoteId;
-	private Double quoteAmount;
-	private Double perMonth;
-	private Double liability;
+	private double quoteAmount;
+	private double perMonth;
+	private double liability;
 	private String vin;
 	private String vehicleMakeYear;
 	private List<String> driverList;	
@@ -17,59 +17,57 @@ public class Quote {
 	public String getQuoteId() {
 		return quoteId;
 	}
-	public Double getQuoteAmount() {
+	public void setQuoteId(String quoteId) {
+		this.quoteId = quoteId;
+	}
+	public double getQuoteAmount() {
 		return quoteAmount;
 	}
-	public Double getPerMonth() {
+	public void setQuoteAmount(double quoteAmount) {
+		this.quoteAmount = quoteAmount;
+	}
+	public double getPerMonth() {
 		return perMonth;
 	}
-	public Double getLiability() {
+	public void setPerMonth(double perMonth) {
+		this.perMonth = perMonth;
+	}
+	public double getLiability() {
 		return liability;
+	}
+	public void setLiability(double liability) {
+		this.liability = liability;
 	}
 	public String getVin() {
 		return vin;
 	}
-	public String getVehicleMakeYear() {
-		return vehicleMakeYear;
-	}
-	public List<String> getDriverList() {
-		return driverList;
-	}
-	public String getSsn() {
-		return ssn;
-	}
-	public String getEducation() {
-		return education;
-	}
-	public void setQuoteId(String quoteId) {
-		this.quoteId = quoteId;
-	}
-	public void setQuoteAmount(Double quoteAmount) {
-		this.quoteAmount = quoteAmount;
-	}
-	public void setPerMonth(Double perMonth) {
-		this.perMonth = perMonth;
-	}
-	public void setLiability(Double liability) {
-		this.liability = liability;
-	}
 	public void setVin(String vin) {
 		this.vin = vin;
+	}
+	public String getVehicleMakeYear() {
+		return vehicleMakeYear;
 	}
 	public void setVehicleMakeYear(String vehicleMakeYear) {
 		this.vehicleMakeYear = vehicleMakeYear;
 	}
+	public List<String> getDriverList() {
+		return driverList;
+	}
 	public void setDriverList(List<String> driverList) {
 		this.driverList = driverList;
+	}
+	public String getSsn() {
+		return ssn;
 	}
 	public void setSsn(String ssn) {
 		this.ssn = ssn;
 	}
+	public String getEducation() {
+		return education;
+	}
 	public void setEducation(String education) {
 		this.education = education;
 	}
-	
-	
 	
 	
 	

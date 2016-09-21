@@ -26,7 +26,7 @@ public class QuoteGenerationController {
 	@Autowired
 	QuoteGenerationService quoteGenerationService;
 
-	public static List<String> licenseList = new ArrayList<String>();
+	public List<String> licenseList = new ArrayList<String>();
 
 	@RequestMapping(value = "/getVehicles", method = RequestMethod.POST)
 	public String getVehicles(@ModelAttribute Customer customer, @ModelAttribute Address address, HttpSession session) {
@@ -68,8 +68,6 @@ public class QuoteGenerationController {
 	@RequestMapping(value = "/addDriver", method = RequestMethod.POST)
 	public String addDriver(@ModelAttribute CustomerInfo customerInfo, HttpSession session) {
 
-		if (licenseList.size() == 2)
-			licenseList.clear();
 		licenseList.add(customerInfo.getLicenseNumber());
 		session.setAttribute("licenseList", licenseList);
 		for (String license : licenseList)
@@ -102,6 +100,7 @@ public class QuoteGenerationController {
 		}
 		else{
 			session.setAttribute("failMessage", "Couldn't generate the quote, try again later!!");
+			licenseList.clear();
 			return ("driverInfo");
 		}
 	}
