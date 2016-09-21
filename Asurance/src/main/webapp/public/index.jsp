@@ -27,7 +27,7 @@
          
         
     </div>
-    <div custom-footer></div>
+    <footer custom-footer></footer>
  <!-- <div ng-include="templates.footerUrl" id="footer"></div> -->
    <!--   <script src= "app/js/index.js"></script> -->
 

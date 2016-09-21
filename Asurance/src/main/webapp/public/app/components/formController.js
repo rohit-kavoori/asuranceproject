@@ -1,10 +1,9 @@
 angular.module("components").controller(
 		'startPageCtrl',
 		function($scope, $http, $state) {
-			$scope.start = function(model) {
-				$scope.startPage.submitted = true;
-				if ($scope.startPage.$valid) {
-					$state.go("vehicles");
+			$scope.quoteForm = function(model) {
+				$scope.registerPage.submitted = true;
+				if ($scope.registerPage.$valid) {
 					console.log(model);
 
 				} else {
@@ -44,32 +43,10 @@ angular.module("components").controller(
 						"password": model.password
 					};
 					
-				/*	var submit = $http({
-						method: "post",
-						url: "saveCustomer",
-						data: model,
-						headers: {'Content-Type': 'application/x-www-form-urlencoded'}
-					});*/
+		
 					console.log(formData);
 					
-					//$http.post('saveCustomer', formData);
-					/*response.success(function(data, status, headers, config) {
-						$scope.responseData = data;
-					});
-					response.error(function(data, status, headers, config) {
-						console.log( "Exception details: " + JSON.stringify({data: data}));
-					});*/
 					
-					/*var actionAttr = angular.element(document.querySelector('form'));
-					actionAttr.attr('action', "saveCustomer");*/
-					console.log(model);
-					/*$http.post("saveCustomer", model).success(function(response) {
-					
-						console.log("success!");
-					}).error(function(errResponse){
-						console.log("error registrating user");
-						
-					});*/
 				
 					
 				}
