@@ -101,14 +101,15 @@ public class CustomerInfo {
 	public void setTickets(String tickets) {
 		this.tickets = tickets;
 	}
-	
 	@Override
 	public String toString() {
 		return "CustomerInfo [gender=" + gender + ", marital=" + marital + ", education=" + education + ", employement="
 				+ employement + ", ssn=" + ssn + ", residence=" + residence + ", moved=" + moved + ", licenseStatus="
-				+ licenseStatus + ", years=" + years + ", primaryEmail=" + primaryEmail + ", residents=" + residents
-				+ ", claims=" + claims + ", tickets=" + tickets + "]";
+				+ licenseStatus + ", years=" + years + ", licenseNumber=" + licenseNumber + ", primaryEmail="
+				+ primaryEmail + ", residents=" + residents + ", claims=" + claims + ", tickets=" + tickets + "]";
 	}
+	
+	
 	
 	
 	

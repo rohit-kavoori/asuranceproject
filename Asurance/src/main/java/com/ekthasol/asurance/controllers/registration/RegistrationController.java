@@ -1,5 +1,8 @@
 package com.ekthasol.asurance.controllers.registration;
 
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -17,17 +20,19 @@ public class RegistrationController {
 	RegistrationService registrationService;
 
 	@RequestMapping(value="/saveCustomer", method=RequestMethod.POST)
-	public ModelAndView saveCustomer(@ModelAttribute Customer customer, @ModelAttribute Address address) {
-		
+	public String saveCustomer(@ModelAttribute Customer customer, @ModelAttribute Address address,HttpSession session, HttpServletResponse  response) {
+		response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
 		System.out.println(customer);
 
 		boolean status = registrationService.saveCustomer(customer, address);
 
 		if (status){
-			return new ModelAndView("success","customer",customer);
+			session.setAttribute("customer", customer);
+			return "success";
 		}
 		else{
-			return new ModelAndView("failure");
+			session.setAttribute("failure", "Could not register, try again!");
+			return "redirect:/#/register";
 		}
 	
 	}

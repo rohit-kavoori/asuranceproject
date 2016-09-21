@@ -1,3 +1,4 @@
+<% String failure = (String) session.getAttribute("failure"); %>
 <div class="container" >
 	<div class="row" id="registerForm">
 		<div
@@ -6,6 +7,8 @@
 					<b>REGISTER HERE</b><small></small>
 				</h2>
 				<hr class="colorgraph">
+				<%if(failure != null) {%><div id="wrongCredential" style="color:red"><%=failure %></div>
+					<%} session.invalidate();%>
 			<form role="form" name="registerPage" ng-controller="startPageCtrl"
 				   action="saveCustomer" method="post" >
 				 <span
@@ -45,9 +48,9 @@
 
 
 				<div class="form-group">
-					<input type='date' name="dateOfBirth" ng-model="model.dateOfBirth"
+					<input type='text' name="dateOfBirth" ng-model="model.dateOfBirth"
 						id="DOB" class="form-control input-lg" placeholder="Date of Birth"
-						 required /> <span class="text-error"
+						 required date-picker/> <span class="text-error"
 						ng-show="registerPage.submitted && registerPage.dateOfBirth.$invalid"
 						ng-style="errorField">*</span>
 				</div>
@@ -104,12 +107,8 @@
 						ng-style="errorField">*</span>
 				</div>
 
-				<!-- 	<div class="form-group">
-					<input type="text" name="username" ng-model="model.username"  id="Username" class="form-control input-lg" placeholder="Username" tabindex="4" required>
-					<span class="text-error" ng-show="registerPage.submitted && registerPage.username.$invalid" ng-style="errorField">Username is Required</span>
-				</div> -->
 				<div class="row">
-					<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="col-xs-12 col-sm-12 col-md-12">
 						<div class="form-group">
 							<input type="password" name="password" ng-model="model.password"
 								id="Password" class="form-control input-lg"
@@ -119,7 +118,7 @@
 								ng-style="errorField">*</span>
 						</div>
 					</div>
-					<div class="col-xs-12 col-sm-6 col-md-6">
+					<!-- <div class="col-xs-12 col-sm-6 col-md-6">
 						<div class="form-group">
 							<input type="password" name="passwordConfirmation"
 								ng-model="model.passwordConfirmation" id="password_confirmation"
@@ -131,7 +130,7 @@
 								ng-show="registerPage.submitted && registerPage.$valid && !registerPage.isPasswordMatch"
 								ng-style="errorField2">Password Should Match!</span>
 						</div>
-					</div>
+					</div> -->
 				</div>
 
 				<hr class="colorgraph">

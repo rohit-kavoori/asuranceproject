@@ -36,7 +36,7 @@
 					
 
 						<div class="form-group col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3" >
-							<h4 >Card Number </h4> 
+							<h4 >Debit/Credit Card Number </h4> 
 							
 							<input type="number" name="cardNumber" ng-model="model."
 								id="card_num" class="form-control input-lg"

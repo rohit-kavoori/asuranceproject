@@ -15,20 +15,24 @@ public class Vehicle {
 	@Id
 	@Column(name = "vin")
 	private String vin;
+	public Vehicle() {
+		
+	}
+
 	@Column(name = "year")
 	private String year;
 	@Column(name = "make")
 	private String make;
 	@Column(name = "model")
 	private String model;
-	private boolean isSelected;
+	private String isSelected;
 	
 
-	public boolean getIsSelected() {
+	public String getIsSelected() {
 		return isSelected;
 	}
 
-	public void setIsSelected(boolean isSelected) {
+	public void setIsSelected(String isSelected) {
 		this.isSelected = isSelected;
 	}
 

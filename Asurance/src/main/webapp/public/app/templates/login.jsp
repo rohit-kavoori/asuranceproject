@@ -1,5 +1,5 @@
 <% String failure = (String) session.getAttribute("nopassword"); %>
-<div class="container" >
+<div class="container" id="login" >
 
 	<div class="row" id="loginForm">
 		<div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3" >
@@ -19,7 +19,7 @@
 						<a href="" class="btn btn-link pull-right">Forgot Password?</a>
 					</span>
 					<%if(failure != null) {%><div id="wrongCredential" style="color:red"><%=failure %></div>
-					<%} %>
+					<%} session.invalidate();%>
 					
 					<hr class="colorgraph">
 					<div class="row">
