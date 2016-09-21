@@ -15,8 +15,6 @@ import com.ekthasol.asurance.service.login.LoginService;
 @Controller
 public class LoginController {
 	
-	
-	
 	@Autowired
 	LoginService loginService;
 	
