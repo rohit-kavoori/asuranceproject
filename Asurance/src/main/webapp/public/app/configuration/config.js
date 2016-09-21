@@ -17,7 +17,7 @@
             };
             var vehicleObj = {
             		url: '/vehicles',
-                templateUrl: "public/app/templates/vehicle.jsp"
+                templateUrl: "public/app/templates/vehicleList.jsp"
                 
             };
             $stateProvider.state("login", loginObj);

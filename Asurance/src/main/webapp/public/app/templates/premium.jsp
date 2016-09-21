@@ -1,4 +1,7 @@
-<html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html">
+<html ng-app="components">
 <head>
 <!--   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
