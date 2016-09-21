@@ -9,7 +9,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import com.ekthasol.asurance.models.Address;
-import com.ekthasol.asurance.models.Quote;
 import com.google.gson.Gson;
 
 public class QuoteGenerationService {
@@ -60,13 +59,6 @@ public class QuoteGenerationService {
 		}
 		return null;
 
-	}
-	
-	public Quote getQuoteAmount(){
-		
-		Quote quote = new Quote("1",576.00,81.00);
-		
-		return quote;
 	}
 
 }

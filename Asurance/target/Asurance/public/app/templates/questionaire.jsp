@@ -4,9 +4,7 @@
 <html ng-app="components">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<!-- <link rel="stylesheet" href="public/bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="public/bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
-     <script src="public/bower_components/jquery/dist/jquery.min.js"></script> -->
+
 <link rel="stylesheet"
 	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script
@@ -23,15 +21,11 @@ li {
 </style>
 </head>
 <body>
-<<<<<<< HEAD
 <div navbar-header></div>
-=======
-<div id="navbar"></div>
->>>>>>> 5a964b10b5c794616d18816df6d29ed051786be7
 	<div class="container" style="
     margin-top: 86px;">
 
-		<form class="form-horizontal" method="post" action="addDriver">
+		<form class="form-horizontal" method="post">
 			<div class="form-group">
 				<label class="col-sm-3 control-label">Gender</label>
 				<div class="col-sm-9">
@@ -89,7 +83,7 @@ li {
 				<small>(required for most accurate quote)</small></label>
 				<div class="col-sm-4">
 					<input class="form-control" name="ssn" maxlength="9" type="text"
-						 />
+						 required/>
 				</div>
 
 				<div class="col-sm-1">
@@ -204,7 +198,7 @@ li {
 				</div>
 
 				<div class="col-sm-6">
-					<input type="submit" class="btn btn-md btn-primary" value="Save & Continue">
+					<input type="submit" id="goToFinalDetails" class="btn btn-md btn-primary" value="Save & Continue">
 				</div>
 			</div>
 	</div>
@@ -213,7 +207,6 @@ li {
 	<script>
 	$(document).ready(function(){
     
-<<<<<<< HEAD
       $("#goToVehicles").click(function(){
       window.location = "http://localhost:8080/Asurance/public/app/templates/vehicleList.jsp"
     
@@ -224,12 +217,5 @@ li {
 	</script>
 	<script src= "../modules/modules.js"></script>
 <script src= "../components/navbar-for-quote.js"></script>
-=======
-		 $("#navbar").load('/Asurance/public/app/templates/navbar-for-quote.html');
-  
-});
-	</script>
-
->>>>>>> 5a964b10b5c794616d18816df6d29ed051786be7
 </body>
 </html>

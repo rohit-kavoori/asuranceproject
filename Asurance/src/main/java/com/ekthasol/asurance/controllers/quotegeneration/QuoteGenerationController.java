@@ -12,9 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.ekthasol.asurance.models.Address;
-import com.ekthasol.asurance.models.Customer;
-import com.ekthasol.asurance.models.CustomerInfo;
-import com.ekthasol.asurance.models.Quote;
 import com.ekthasol.asurance.models.Vehicle;
 import com.ekthasol.asurance.service.quotegeneration.QuoteGenerationService;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -27,10 +24,9 @@ public class QuoteGenerationController {
 	QuoteGenerationService quoteGenerationService;
 
 	@RequestMapping(value = "/getVehicles", method = RequestMethod.POST)
-	public String getVehicles(@ModelAttribute Customer customer, @ModelAttribute Address address, HttpSession session) {
+	public ModelAndView getVehicles(@ModelAttribute("address") Address address, HttpSession session) {
+		ModelAndView model = new ModelAndView();
 		String output = quoteGenerationService.getListtoUI(address);
-		session.setAttribute("customer", customer);
-		session.setAttribute("address", address);
 		if (output != null) {
 			List<Vehicle> vehicleList = null;
 			ObjectMapper mapper = new ObjectMapper();
@@ -41,42 +37,31 @@ public class QuoteGenerationController {
 				e.printStackTrace();
 			}
 			
-			if (vehicleList != null && !vehicleList.isEmpty()){
+			if (vehicleList != null){
 				session.setAttribute("vehicleList", vehicleList);
-				return "vehicleList";
-			}else{
-				session.setAttribute("message", "No Vehicles found");
-				return "redirect:/#/quote";
-			}
+				model.setViewName("vehicleList");
+			}else
+				model.setViewName("failure");
 		}
-		else{
-			
-			session.setAttribute("message", "Address did not match");
-			return "redirect:/#/quote";
-		}
+		else
+			model.setViewName("failure");
+		return model;
 	}
 	
 	@RequestMapping(value = "/questionnaire", method = RequestMethod.POST)
-	public ModelAndView getQuestions(@ModelAttribute Vehicle selectedVehicle,HttpSession session){
+	public ModelAndView getQuestions(@ModelAttribute("vehicles") Vehicle selectedVehicle){
 		
-		session.setAttribute("selectedVehicle", selectedVehicle);
-		System.out.println(selectedVehicle.toString());
+		Vehicle vehicle = new Vehicle();
+		if(selectedVehicle.getIsSelected()){
+			
+			vehicle.setIsSelected(selectedVehicle.getIsSelected());
+			vehicle.setVin(selectedVehicle.getVin());
+			vehicle.setYear(selectedVehicle.getYear());
+			vehicle.setMake(selectedVehicle.getMake());
+			vehicle.setModel(selectedVehicle.getModel());
+		}
+		
+		System.out.println(vehicle.toString());
 		return new ModelAndView("questionaire");
-	}
-	
-	@RequestMapping(value = "/addDriver", method = RequestMethod.POST)
-	public ModelAndView addDriver(@ModelAttribute CustomerInfo customerInfo,HttpSession session){
-		
-		session.setAttribute("customerInfo", customerInfo);
-		System.out.println(customerInfo.toString());
-		return new ModelAndView("driverInfo");
-	}
-	
-	@RequestMapping(value = "/premium", method = RequestMethod.GET)
-	public String goToPremium(HttpSession session) {
-
-		Quote quote = quoteGenerationService.getQuoteAmount(); 
-		session.setAttribute("quote", quote);
-		return ("premium");
 	}
 }

@@ -2,24 +2,26 @@ package com.ekthasol.asurance.models;
 
 public class CustomerInfo {
 	
+	private String gender;
 	private String marital;
 	private String education;
 	private String employement;
 	private String ssn;
 	private String residence;
 	private String moved;
-	private String licensedStatus;
-	private String emailPrimary;
+	private String licenseStatus;
+	private String years;
+	private String licenseNumber;
+	private String primaryEmail;
 	private String residents;
 	private String claims;
 	private String tickets;
 	
-	@Override
-	public String toString() {
-		return "CustomerInfo [marital=" + marital + ", education=" + education + ", employement=" + employement
-				+ ", ssn=" + ssn + ", residence=" + residence + ", moved=" + moved + ", licensedStatus="
-				+ licensedStatus + ", emailPrimary=" + emailPrimary + ", residents=" + residents + ", claims=" + claims
-				+ ", tickets=" + tickets + "]";
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
 	public String getMarital() {
 		return marital;
@@ -57,17 +59,29 @@ public class CustomerInfo {
 	public void setMoved(String moved) {
 		this.moved = moved;
 	}
-	public String getLicensedStatus() {
-		return licensedStatus;
+	public String getLicenseStatus() {
+		return licenseStatus;
 	}
-	public void setLicensedStatus(String licensedStatus) {
-		this.licensedStatus = licensedStatus;
+	public void setLicenseStatus(String licenseStatus) {
+		this.licenseStatus = licenseStatus;
 	}
-	public String getEmailPrimary() {
-		return emailPrimary;
+	public String getYears() {
+		return years;
 	}
-	public void setEmailPrimary(String emailPrimary) {
-		this.emailPrimary = emailPrimary;
+	public void setYears(String years) {
+		this.years = years;
+	}
+	public String getLicenseNumber() {
+		return licenseNumber;
+	}
+	public void setLicenseNumber(String licenseNumber) {
+		this.licenseNumber = licenseNumber;
+	}
+	public String getPrimaryEmail() {
+		return primaryEmail;
+	}
+	public void setPrimaryEmail(String primaryEmail) {
+		this.primaryEmail = primaryEmail;
 	}
 	public String getResidents() {
 		return residents;
@@ -87,6 +101,15 @@ public class CustomerInfo {
 	public void setTickets(String tickets) {
 		this.tickets = tickets;
 	}
+	
+	@Override
+	public String toString() {
+		return "CustomerInfo [gender=" + gender + ", marital=" + marital + ", education=" + education + ", employement="
+				+ employement + ", ssn=" + ssn + ", residence=" + residence + ", moved=" + moved + ", licenseStatus="
+				+ licenseStatus + ", years=" + years + ", primaryEmail=" + primaryEmail + ", residents=" + residents
+				+ ", claims=" + claims + ", tickets=" + tickets + "]";
+	}
+	
 	
 	
 }

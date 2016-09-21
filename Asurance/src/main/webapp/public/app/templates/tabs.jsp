@@ -8,16 +8,11 @@
     <li ><a data-toggle="tab" href="">Final Details</a></li>
     <li ><a data-toggle="tab" href="">Rate</a></li>
   </ol> -->
-   <h2 id="heading">Let's Start</h2>
-
+   <h2 id="heading">Let's Start</h2><span class="glyphicons glyphicons-user"></span>
 </nav>
 
-<!-- <div class="tab-content">
-  <div  class="tab-pane fade in active">
-  	<div id="start" start-page>
-	</div>
-  </div> -->
-  <div id="start" start-page>
+
+  <div id="quotePage" start-page>
  
 </div>
 

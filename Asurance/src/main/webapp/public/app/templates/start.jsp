@@ -1,106 +1,97 @@
+<div class="container">
+	<div class="row" >
+			
+	
+		<div
+			class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+			<form role="form" name="registerPage" ng-controller="startPageCtrl"
+				   action="getVehicles" method="post" >
+			 <span
+								class="text-error"
+								ng-show="registerPage.submitted && registerPage.$invalid"
+								ng-style="errorField2">* Required Fields</span><br>
 
-<% String failure = (String) session.getAttribute("message"); %>
-<div class="container" style="margin-top: 150px">
+				<div class="row">
+					<div class="col-xs-12 col-sm-6 col-md-6">
 
-	<form name="startPage" ng-controller="startPageCtrl" method="post"
-		action="getVehicles">
-		<span class="text-error"
-			ng-show="startPage.submitted && startPage.$invalid"
-			ng-style="errorField2">* Required Fields</span> <br>
-		<br>
-		<%if(failure != null) {%><div id="wrongCredential" style="color: red"><%=failure %></div>
-		<%} session.invalidate();%>
-		<div class=" form-group row ">
-			<div class="col-sm-4  has-feedback has-feedback-left">
-				<input type="text" class="form-control" ng-model="model.firstName"
-					name="firstName" placeholder="First Name" required /><span
-					class="text-error"
-					ng-show="startPage.submitted && startPage.firstName.$invalid"
-					ng-style="errorField">*</span><i
-					class="form-control-feedback glyphicon glyphicon-user"></i>
-			</div>
-			<div class="col-sm-2">
-				<input type="text" class="form-control" name="middleName"
-					placeholder="MI" style="width: 80px">
-			</div>
-			<div class="col-sm-4">
-				<input type="text" class="form-control" ng-model="model.lastName"
-					name="lastName" placeholder="Last Name" required /><span
-					class="text-error"
-					ng-show="startPage.submitted && startPage.lastName.$invalid"
-					ng-style="errorField">*</span>
-			</div>
-			<div class="col-sm-2 ">
-				<select class="form-control" name="suffix"
-					style="border-radius: 4px; border: solid 3px #cbc9c9; background-color: #fcf8e3">
-					<option value="" selected>Suffix</option>
-					<option value="Jr">Jr</option>
-					<option value="Sr">Sr</option>
-				</select>
-			</div>
-		</div>
-		<div class="form-group row">
-			<div class="col-sm-4 has-feedback ">
-				<input type="text" class="form-control" ng-model="model.address1"
-					name="addressLine1" placeholder="Mailing Address" required /><span
-					class="text-error"
-					ng-show="startPage.submitted && startPage.address1.$invalid"
-					ng-style="errorField">*</span><i
-					class="form-control-feedback glyphicon glyphicon-home"></i>
-			</div>
-			<div class="col-sm-3 ">
-				<input type="text" class="form-control" name="addressLine2"
-					placeholder="Apt./Unit #" />
-			</div>
-		</div>
-		<div class="form-group row">
-			<div class="col-sm-4 ">
-				<input type="text" class="form-control" ng-model="model.address2"
-					name="city" placeholder="City" required /><span class="text-error"
-					ng-show="startPage.submitted && startPage.address2.$invalid"
-					ng-style="errorField">*</span>
-			</div>
-			<div class="col-sm-2 " ng-controller="stateController">
-				<select class="form-control" ng-model="model.address3" name="state"
-					id="state"
-					style="border-radius: 4px; border: solid 3px #cbc9c9; background-color: #fcf8e3"
-					ng-model="selectedState" required>
+						<div class="form-group">
+							<input type="text" name="firstName" ng-model="model.firstName"
+								id="first_name" class="form-control input-lg"
+								placeholder="First Name" tabindex="1" required> <span
+								class="text-error"
+								ng-show="registerPage.submitted && registerPage.firstName.$invalid"
+								ng-style="errorField">*</span>
+						</div>
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-6">
+						<div class="form-group">
+							<input type="text" name="lastName" ng-model="model.lastName"
+								id="last_name" class="form-control input-lg"
+								placeholder="Last Name" tabindex="2" required> <span
+								class="text-error"
+								ng-show="registerPage.submitted && registerPage.lastName.$invalid"
+								ng-style="errorField">*</span>
+						</div>
+					</div>
+				</div>
 
-					<option value="">Select State</option>
-					<option ng-repeat="state in addState" value="{{state.name}}">{{state.name}}</option>
-				</select><span class="text-error"
-					ng-show="startPage.submitted && startPage.address3.$invalid"
-					ng-style="errorField">*</span>
-			</div>
-			<div class="col-sm-2 ">
-				<input type="text" class="form-control" ng-model="model.address4"
-					name="zip" placeholder="Zip" style="width: 180px" required /><span
-					class="text-error"
-					ng-show="startPage.submitted && startPage.address4.$invalid"
-					ng-style="errorField">*</span>
-			</div>
-		</div>
-		<div class="form-group row">
-			<!--  <div class="col-sm-2 "> <label for="dob" style="margin-top:10px">Date of Birth</label></div> -->
-			<div class="col-sm-3 ">
-				<input type="date" class="form-control" ng-model="model.dob"
-					name="dateOfBirth" required /><span class="text-error"
-					ng-show="startPage.submitted && startPage.dob.$invalid"
-					ng-style="errorField">*</span>
-			</div>
-		</div>
-		<div class="form-group row">
-			<div class="col-sm-12 text-center">
-				<input type="submit" class="btn btn-primary btn-lg"
-					value="Okay, start my quote" ng-click="start(model)">
-			</div>
 
-		</div>
-		<div class="form-group row">
-			<div class="col-sm-12" ng-click="noThanks()">
-				<a href=""><p class="text-center">No, Thanks</p></a>
-			</div>
+				<div class="form-group">
+					<input type="text" name="addressLine1"
+						ng-model="model.addressLine1" id="add_line_1"
+						class="form-control input-lg" placeholder="Mailing Address"
+						tabindex="3"  required> <span class="text-error"
+						ng-show="registerPage.submitted && registerPage.addressLine1.$invalid"
+						ng-style="errorField">*</span>
+				</div>
 
+				<div class="form-group">
+					<input type="text" name="addressLine2" ng-model="model.addressLine2" id="add_line_2"
+						class="form-control input-lg" placeholder="Apt./Unit #"
+						tabindex="3">
+				</div>
+
+				<div class="form-group">
+					<input type="text" name="city" ng-model="model.city" id="City"
+						class="form-control input-lg" placeholder="City" tabindex="3" 
+						required> <span class="text-error"
+						ng-show="registerPage.submitted && registerPage.city.$invalid"
+						ng-style="errorField">*</span>
+				</div>
+
+				<div class="form-group">
+					<input type="text" name="zip" ng-model="model.zip" id="zip"
+						class="form-control input-lg" placeholder="Zip" tabindex="3"
+						 required> <span class="text-error"
+						ng-show="registerPage.submitted && registerPage.city.$invalid"
+						ng-style="errorField">*</span>
+				</div>
+
+				<div class="form-group" ng-controller="stateController">
+					<select class="form-control input-lg" name="state"
+						ng-model="model.state" id="stateID"
+						  required>
+						<option value="">Select State</option>
+						<option ng-repeat="state in addState" value="{{state.name}}">{{state.name}}</option>
+					</select> <span class="text-error"
+						ng-show="registerPage.submitted && registerPage.state.$invalid"
+						ng-style="errorField">*</span>
+				</div>
+
+
+
+				<hr class="colorgraph">
+				<div class="row">
+					<div class="col-xs-12 col-md-6">
+						<input  type="submit" value="Register"
+							 class="btn btn-primary btn-block btn-lg" ng-click="quoteForm(model)" tabindex="7" >
+					</div>
+					<div class="col-xs-12 col-md-6">
+						<a ui-sref="login" href="#"
+							class="btn btn-success btn-block btn-lg">Sign In</a>
+					</div>
+				</div>
+			</form>
 		</div>
-	</form>
-</div>
+	
+	</div>
