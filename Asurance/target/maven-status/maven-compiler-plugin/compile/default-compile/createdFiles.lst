@@ -6,8 +6,11 @@ com\ekthasol\asurance\controllers\quotegeneration\QuoteGenerationController.clas
 com\ekthasol\asurance\service\registration\RegistrationService.class
 com\ekthasol\asurance\controllers\registration\RegistrationController.class
 com\ekthasol\asurance\service\quotegeneration\QuoteGenerationService.class
+com\ekthasol\asurance\service\payment\PaymentService.class
+com\ekthasol\asurance\controllers\payment\PaymentController.class
 com\ekthasol\asurance\dao\registration\RegistrationDAO.class
 com\ekthasol\asurance\models\Address.class
+com\ekthasol\asurance\models\CreditCard.class
 com\ekthasol\asurance\models\Quote.class
 com\ekthasol\asurance\models\Customer.class
 com\ekthasol\asurance\service\login\LoginService.class

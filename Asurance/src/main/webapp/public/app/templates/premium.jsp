@@ -1,7 +1,8 @@
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html">
-<html ng-app="components">
+<!DOCTYPE html>
+<html >
 <head>
 <!--   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
@@ -848,15 +849,22 @@ hr.style15 {
 		</div>
 
 		<hr class="style14">
+<form method="post" action="">
+<input type="hidden" name="liability" value="${quote.getLiability()}">
+<input type="hidden" name="UninsuredMotoristBI"  value="">
+<input type="hidden" name="UnderinsuredMotoristBI"  value="">
+<input type="hidden" name="UninsuredMotoristPD" value="">
+<input type="hidden" name="PersonalInjuryProtection" value="">
+<input type="hidden" name="Comprehensive" value="">
+<input type="hidden" name="Collision" value="">
+<input type="hidden" name="Rental" value="">
+<input type="hidden" name="Roadside" value="">
 
 		<div class="btn-group btn-group-lg">
-			<a href="policyNumber.html" class="btn btn-lg btn-primary btn-block"
-				style="margin-left: 30px;">Continue to Buy</a>
+				<input type="submit" class="btn btn-md btn-primary"
+					value="Continue to Buy" id="submit">
 		</div>
-		<!-- <div class="btn-group btn-group-lg">
-		<a href="policyNumber.html" class="btn btn-lg btn-primary btn-block"
-			style="margin-left: 60px;">Continue to Buy</a>
-	</div> -->
+
 
 		<hr class="colorgraph">
 
@@ -876,7 +884,7 @@ hr.style15 {
 			</div>
 
 		</div>
-
+</form>
 	</div>
 	<script>
 		$(document)
@@ -904,5 +912,6 @@ hr.style15 {
 	<script src="public/app/js/premium.js"></script>
 	<!-- <script src="../js/premium.js"></script> -->
 </body>
+
 
 </html>
