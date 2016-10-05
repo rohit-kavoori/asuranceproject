@@ -6,3 +6,12 @@ angular.module("components")
         };
        
 }]);
+
+angular.module("components")
+.directive("customFooter2", [function () {
+    return {
+        templateUrl: "footer.jsp",
+        restrict: "A,E,C"
+    };
+   
+}]);

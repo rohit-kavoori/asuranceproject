@@ -5,18 +5,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <link rel="stylesheet"
-	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script
-	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script src="../../bower_components/angular/angular.js"></script>
+	href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="../../bower_components/angular/angular.js"></script> 
 	<link href="../../css/footer.css" rel="stylesheet">
 <title>Payment</title>
 </head>
 <body>
- <div class="container" >
-	<div class="row">
+ <div class="container-fluid" >
+	<div class="row" style="
+    margin-bottom: 164px;
+">
 		<div
 			class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
 			<h2 class="btn btn-primary btn-block" style="font-size: 25px">
@@ -29,21 +29,22 @@
 								class="text-error"
 								ng-show="paymentPage.submitted && paymentPage.$invalid"
 								ng-style="errorField2">* Required Fields</span>
-								<img class="img-responsive pull-right" src="http://i76.imgup.net/accepted_c22e0.png">
+								<img class="img-responsive pull-right"   src="http://i76.imgup.net/accepted_c22e0.png" style="
+    width: 158px;">
 								<br><br>
 				
 				<div class="row">
 					
 
 						<div class="form-group col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3" >
-							<h4 >Debit/Credit Card Number </h4> 
+							<h4 >Debit / Credit Card Number </h4> 
 							
 							<input type="number" name="cardNumber" ng-model="model."
 								id="card_num" class="form-control input-lg"
 								placeholder="Valid Card Number" tabindex="1" minlength="16" maxlength="16" required  > <span
 								class="text-error"
 								ng-show="paymentPage.submitted && paymentPage.firstName.$invalid"
-								ng-style="errorField">*</span>
+								ng-style="errorField"></span>
 						</div>
 						
 						
@@ -54,10 +55,10 @@
 								placeholder="MM/YY" tabindex="2" required> <span
 								class="text-error"
 								ng-show="registerPage.submitted && registerPage.lastName.$invalid"
-								ng-style="errorField">*</span>
+								ng-style="errorField"></span>
 						</div>
 					</div>
-				</div>
+				
 
 
 
@@ -66,11 +67,11 @@
 						id="cvc" class="form-control input-lg" placeholder="CVC" maxlength="3"
 						 required /> <span class="text-error"
 						ng-show="registerPage.submitted && registerPage.dateOfBirth.$invalid"
-						ng-style="errorField">*</span>
+						ng-style="errorField"></span>
 				
 				</div>
 
-
+</div>
 				<hr class="colorgraph">
 				<div class="row">
 					<div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
@@ -82,7 +83,8 @@
 			</form>
 		</div> 
 	</div>
-	<div custom-footer></div>
+	</div>
+	<footer custom-footer-2></footer>
 	 <script src="../../app/modules/modules.js"></script>
 	 <script src= "../../app/components/footer.js"></script>
 </body>

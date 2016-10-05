@@ -23,6 +23,7 @@ footer {
         margin-top: 20px;
     }
 }
+
 @media screen and (max-width: 968px) {
      footer {
     min-height: 535px;
